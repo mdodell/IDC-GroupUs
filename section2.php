@@ -47,16 +47,17 @@
 
     <div id="center">
 
-        <h2>Interact District Conference 2018 Registration</h2>
+        <h2>Individual Registration</h2>
 
-        <h4>Please select if you are a group or an individual:</h4>
+        <h4>Please select if you are a Interactor, Rotarian, or Rotaractor:</h4>
 
         <br>
 
         <p>
-          <button type="button" class="btn btn-primary" onclick="location.href = 'section6.php'"><i class="fas fa-users fa-lg"></i>&nbsp;&nbsp;Group Registration</button>
-          <button type="button" class="btn btn-primary" onclick="location.href = 'section2.php'"><i class="fas fa-user fa-lg"></i>&nbsp;&nbsp;Individual Registration</button>
-        </p>
+          <button type="button" class="btn btn-primary" onclick="location.href = 'section3.php'"><i class="fas fa-user fa-lg"></i>&nbsp;&nbsp;Interactor Registration</button>
+          <button type="button" class="btn btn-primary" onclick="location.href = 'section4.php'"><i class="fas fa-user fa-lg"></i>&nbsp;&nbsp;Rotaractor Registration</button>
+          <button type="button" class="btn btn-primary" onclick="location.href = 'section5.php'"><i class="fas fa-user fa-lg"></i>&nbsp;&nbsp;Rotarian Registration</button>
+      </p>
 
     </div>
 
