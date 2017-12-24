@@ -22,15 +22,15 @@ if(isset($_POST['submit'])){
 
     if($_SESSION['advisor'] == true){
       echo("<script>console.log('Advisor attempt');</script>");
-      echo("<script>window.location = '../section7.php';</script>");
+      echo("<script>window.location = 'section7.php';</script>");
     }
     else if($_SESSION['student'] == true){
       echo("<script>console.log('Student attempt');</script>");
-      echo("<script>window.location = '../section8.php';</script>");
+      echo("<script>window.location = 'section8.php';</script>");
     }
     else if($_SESSION['rotaractor'] == true){
       echo("<script>console.log('Rotaractor attempt');</script>");
-      echo("<script>window.location = '../section9.php';</script>");
+      echo("<script>window.location = 'section9.php';</script>");
     }
 
 
