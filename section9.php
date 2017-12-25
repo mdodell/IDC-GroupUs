@@ -1,6 +1,10 @@
 <?php
 session_start();
 echo("<script>console.log('Initial attempt');</script>");
+if(isset($_POST['submit'])){
+    echo("<script>console.log('Finished attempt');</script>");
+    echo("<script>window.location = 'section10.php';</script>");
+}
 ?>
 
 <!DOCTYPE html>

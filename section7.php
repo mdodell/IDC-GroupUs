@@ -11,6 +11,10 @@ if(isset($_POST['submit'])){
     echo("<script>console.log('Rotaractor attempt');</script>");
     echo("<script>window.location = 'section9.php';</script>");
   }
+  else{
+    echo("<script>console.log('Finished attempt');</script>");
+    echo("<script>window.location = 'section10.php';</script>");
+  }
 
 
 
