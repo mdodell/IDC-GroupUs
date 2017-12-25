@@ -40,28 +40,28 @@
 
       <div class="input-group input-group-lg">
 <span class="input-group-addon" id="sizing-addon1">Name</span>
-<input type="text" name="name" class="form-control" placeholder="Your first/last name" aria-describedby="sizing-addon1">
+<input type="text" name="name" class="form-control" placeholder="Your first/last name" aria-describedby="sizing-addon1" required>
       </div>
 
       <br>
 
       <div class="input-group input-group-lg">
 <span class="input-group-addon" id="sizing-addon1">Rotaract Club Name</span>
-<input type="text" name="rotaractClubName" class="form-control" placeholder="I.e. ASU Rotaract Club, Grand Canyon University Rotaract Club, etc." aria-describedby="sizing-addon1">
+<input type="text" name="rotaractClubName" class="form-control" placeholder="I.e. ASU Rotaract Club, Grand Canyon University Rotaract Club, etc." aria-describedby="sizing-addon1" required>
       </div>
 
       <br>
 
       <div class="input-group input-group-lg">
 <span class="input-group-addon" id="sizing-addon1">E-mail</span>
-<input type="text" name="email" class="form-control" placeholder="In proper user@example.com format" aria-describedby="sizing-addon1">
+<input type="email" name="email" class="form-control" placeholder="In proper user@example.com format" aria-describedby="sizing-addon1" required>
       </div>
 
       <br>
 
       <div class="input-group input-group-lg">
 <span class="input-group-addon" id="sizing-addon1">Phone Number</span>
-<input type="text" name="phone" class="form-control" placeholder="In proper 123-456-7890 format" aria-describedby="sizing-addon1">
+<input type="tel" name="phone" class="form-control" placeholder="In proper 123-456-7890 format" aria-describedby="sizing-addon1" required>
       </div>
 
       <br>
@@ -69,7 +69,7 @@
       <script type="text/javascript">
       function showOtherField(name){
         if(name=='Other'){
-          document.getElementById('otherField').innerHTML='<input type="text" name="other" class="form-control" placeholder="Non-binary, agender, etc." aria-describedby="sizing-addon1"/>';
+          document.getElementById('otherField').innerHTML='<input type="text" name="other" class="form-control" placeholder="Non-binary, agender, etc." aria-describedby="sizing-addon1" required/>';
         }
         else{
            document.getElementById('otherField').innerHTML='';
@@ -79,8 +79,8 @@
 
       <div class="form-group">
         <label for="gender">Gender:</label>
-        <select class="form-control" id="gender" onchange="showOtherField(this.options[this.selectedIndex].value)">
-          <option selected>Please select an option</option>
+        <select required class="form-control" id="gender" onchange="showOtherField(this.options[this.selectedIndex].value)">
+          <option value="">Please select an option</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
           <option value="Prefer not to say">Prefer not to say</option>
@@ -92,7 +92,7 @@
 
       <div class="input-group input-group-lg">
 <span class="input-group-addon" id="sizing-addon1">Age</span>
-<input type="text" name="age" class="form-control" placeholder="I.e. 18, 28, etc." aria-describedby="sizing-addon1">
+<input type="number" name="age" class="form-control" placeholder="I.e. 18, 28, etc." aria-describedby="sizing-addon1" required>
       </div>
 
       <br>
@@ -101,7 +101,7 @@
       <script type="text/javascript">
       function showOtherDietField(name){
         if(name=='Other'){
-          document.getElementById('otherDietField').innerHTML='<input type="text" name="otherDiet" class="form-control" placeholder="Enter your other dietary restrictions here" aria-describedby="sizing-addon1"/>';
+          document.getElementById('otherDietField').innerHTML='<input type="text" name="otherDiet" class="form-control" placeholder="Enter your other dietary restrictions here" aria-describedby="sizing-addon1" required/>';
         }
         else{
            document.getElementById('otherDietField').innerHTML='';
@@ -110,8 +110,8 @@
       </script>
       <div class="form-group">
         <label for="diet">Dietary Restrictions:</label>
-        <select class="form-control" id="diet" onchange="showOtherDietField(this.options[this.selectedIndex].value)">
-          <option selected>Please select an option</option>
+        <select required class="form-control" id="diet" onchange="showOtherDietField(this.options[this.selectedIndex].value)">
+          <option value="">Please select an option</option>
           <option value="Vegetarian">Vegetarian</option>
           <option value="Vegan">Vegan</option>
           <option value="Kosher">Kosher</option>
@@ -119,7 +119,7 @@
           <option value="Gluten-Free">Gluten-Free</option>
           <option value="Daily-Free">Dairy-Free</option>
           <option value="None">None</option>
-          <option value="Other">Other</option>
+          <option value="Other">Other:</option>
         </select>
       </div>
       <div id="otherDietField"></div>

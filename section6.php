@@ -78,35 +78,35 @@ if(isset($_POST['submit'])){
 
       <div class="input-group input-group-lg">
 <span class="input-group-addon" id="sizing-addon1">What is your group's name?</span>
-<input type="text" name="groupName" class="form-control" placeholder="I.e. ASU Rotaract Club, Phoeix Squaw Peak Rotary Club, Mohave High School Interact Club" aria-describedby="sizing-addon1">
+<input type="text" name="groupName" class="form-control" placeholder="I.e. ASU Rotaract Club, Phoeix Squaw Peak Rotary Club, Mohave High School Interact Club" aria-describedby="sizing-addon1" required>
       </div>
 
       <br>
 
       <div class="input-group input-group-lg">
 <span class="input-group-addon" id="sizing-addon1">Please enter the name of the primary contact</span>
-<input type="text" name="primaryContactName" class="form-control" placeholder="I.e. Jim Smith, Jane Doe" aria-describedby="sizing-addon1">
+<input type="text" name="primaryContactName" class="form-control" placeholder="I.e. Jim Smith, Jane Doe" aria-describedby="sizing-addon1" required>
       </div>
 
       <br>
 
       <div class="input-group input-group-lg">
-<span class="input-group-addon" id="sizing-addon1">Please enter the primary contact's e-mail address (this will be used if there is any problems with the registration)</span>
-<input type="text" name="primaryContactEmail" class="form-control" placeholder="In proper user@example.com format" aria-describedby="sizing-addon1">
+<span class="input-group-addon" id="sizing-addon1">Please enter the primary contact's e-mail address</span>
+<input type="email" name="primaryContactEmail" class="form-control" placeholder="In proper user@example.com format" aria-describedby="sizing-addon1" required>
       </div>
 
       <br>
 
       <div class="input-group input-group-lg">
 <span class="input-group-addon" id="sizing-addon1">Please enter the primary contact's phone number</span>
-<input type="text" name="primaryContactPhone" class="form-control" placeholder="In proper 123-456-7890 format" aria-describedby="sizing-addon1">
+<input type="tel" name="primaryContactPhone" class="form-control" placeholder="In proper 123-456-7890 format" aria-describedby="sizing-addon1" required>
       </div>
 
       <br>
 
       <div class="radio">
         <p>Are you registering any Faculty or Rotarian Advisors?</p>
-        <label><input type="radio" name="advisorRadio" value="Yes">Yes</label>
+        <label><input type="radio" name="advisorRadio" value="Yes" required>Yes</label>
       </div>
       <div class="radio">
         <label><input type="radio" name="advisorRadio" value="No">No</label>
@@ -115,7 +115,7 @@ if(isset($_POST['submit'])){
 
       <div class="radio">
         <p>Are you registering any high school or middle school students?</p>
-        <label><input type="radio" name="studentRadio" value="Yes">Yes</label>
+        <label><input type="radio" name="studentRadio" value="Yes" required>Yes</label>
       </div>
       <div class="radio">
         <label><input type="radio" name="studentRadio" value="No">No</label>
@@ -124,7 +124,7 @@ if(isset($_POST['submit'])){
 
       <div class="radio">
         <p>Are you registering any Rotaractors?</p>
-        <label><input type="radio" name="rotaractorRadio" value="Yes">Yes</label>
+        <label><input type="radio" name="rotaractorRadio" value="Yes" required>Yes</label>
       </div>
       <div class="radio">
         <label><input type="radio" name="rotaractorRadio"value="No">No</label>
