@@ -79,7 +79,7 @@ if(isset($_POST['submit'])){
               }
             }
             function getInputs(amount){
-              if(document.getElementById('advisorAmount').validity.valid && !document.getElementById('advisorAmount').validity.typeMismatch){
+              if(document.getElementById('advisorAmount').validity.valid && !document.getElementById('advisorAmount').validity.typeMismatch && document.getElementById('advisorAmount').value > 0){
                 console.log("Script test");
                 var myHtml = "";
 
@@ -97,7 +97,7 @@ if(isset($_POST['submit'])){
                 console.log("Post set test");
               }
               else{
-                alert("Please enter a valid amount.");
+                alert("Please enter a valid positive amount.");
               }
 
             }
