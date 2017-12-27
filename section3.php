@@ -77,7 +77,7 @@ if(isset($_POST['submit'])){
       <script type="text/javascript">
       function showOtherField(name){
         if(name=='Other'){
-          document.getElementById('otherField').innerHTML='<input type="text" name="other" class="form-control" placeholder="Non-binary, agender, etc." aria-describedby="sizing-addon1" required />';
+          document.getElementById('otherField').innerHTML='<input type="text" name="other" class="form-control" placeholder="Non-binary, agender, etc." aria-describedby="sizing-addon1" required/>';
         }
         else{
            document.getElementById('otherField').innerHTML='';
@@ -92,7 +92,7 @@ if(isset($_POST['submit'])){
           <option value="Male">Male</option>
           <option value="Female">Female</option>
           <option value="Prefer not to say">Prefer not to say</option>
-          <option value="Other:">Other:</option>
+          <option value="Other">Other:</option>
         </select>
       </div>
       <div id="otherField"></div>
