@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
 
 <head>
 
-<title>Rotarian Individidual Registration</title>
+<title>Rotarian Individual Registration</title>
 
 <!-- CSS assets -->
 
@@ -40,7 +40,7 @@ if(isset($_POST['submit'])){
 
   <div id="center">
 
-      <h2>Rotarian Individidual Registration</h2>
+      <h2>Rotarian Individual Registration</h2>
 
       <br>
 

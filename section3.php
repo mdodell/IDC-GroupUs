@@ -40,7 +40,7 @@ if(isset($_POST['submit'])){
 
   <div id="center">
 
-      <h2>Interactor Individidual Registration</h2>
+      <h2>Interactor Individual Registration</h2>
 
       <br>
 
