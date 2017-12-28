@@ -4,7 +4,7 @@ echo("<script>console.log('Initial attempt');</script>");
 if(isset($_POST['submit'])){
     echo("<script>console.log('Finished attempt');</script>");
     $_SESSION['section5Name'] = $_POST['name'];
-    $_SESSION['section5ClubName'] = $_POST['rotaractClubName'];
+    $_SESSION['section5ClubName'] = $_POST['rotaryClubName'];
     $_SESSION['section5Email'] = $_POST['email'];
     $_SESSION['section5Phone'] = $_POST['phone'];
     $_SESSION['section5Gender'] = $_POST['gender'];
@@ -100,7 +100,7 @@ if(isset($_POST['submit'])){
 
       <div class="form-group">
         <label for="gender">Gender:</label>
-        <select required class="form-control" id="gender" onchange="showOtherField(this.options[this.selectedIndex].value)">
+        <select required class="form-control" id="gender" name="gender" onchange="showOtherField(this.options[this.selectedIndex].value)">
           <option value="">Please select an option</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
@@ -134,7 +134,7 @@ if(isset($_POST['submit'])){
       </script>
       <div class="form-group">
         <label for="diet">Dietary Restrictions:</label>
-        <select required class="form-control" id="diet" onchange="showOtherDietField(this.options[this.selectedIndex].value)">
+        <select required class="form-control" id="diet" name="diet" onchange="showOtherDietField(this.options[this.selectedIndex].value)">
           <option value="">Please select an option</option>
           <option value="Vegetarian">Vegetarian</option>
           <option value="Vegan">Vegan</option>

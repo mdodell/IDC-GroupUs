@@ -67,9 +67,10 @@ session_start();
 
         <h4>Thank you for completing registration! You will receive a confirmation email promptly.</h4>
 
-        //Section 3
+        <!-- Section 3 -->
         <?php
-        echo '<div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Grade:</th> <th>Diet:</th> </tr> </thead> <tbody>';
+        if($_SESSION['section3Name']){
+        echo '<div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Interact Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Grade:</th> <th>Diet:</th> </tr> </thead> <tbody>';
                 echo "<tr><td>" .  $_SESSION['section3Name'] . "</td>".
                 "<td>" . $_SESSION['section3ClubName'] . "</td>".
                 "<td>" . $_SESSION['section3Email'] . "</td>".
@@ -79,18 +80,58 @@ session_start();
                 "<td>" . ($_SESSION['section3OtherDiet'] ? $_SESSION['section3OtherDiet'] : $_SESSION['section3Diet']) . "</td></tr>";
 
           echo '</tbody></table>';
+        }
           ?>
-          //Section 4
+          <!-- Section 4 -->
+          <?php
+          if($_SESSION['section4Name']){
+          echo '<div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Rotaract Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Age:</th> <th>Diet:</th> </tr> </thead> <tbody>';
+                  echo "<tr><td>" .  $_SESSION['section4Name'] . "</td>".
+                  "<td>" . $_SESSION['section4ClubName'] . "</td>".
+                  "<td>" . $_SESSION['section4Email'] . "</td>".
+                  "<td>" . $_SESSION['section4Phone'] . "</td>".
+                  "<td>" . ($_SESSION['section4OtherGender'] ? $_SESSION['section4OtherGender'] : $_SESSION['section4Gender']) . "</td>".
+                  "<td>" . $_SESSION['section4Age'] . "</td>".
+                  "<td>" . ($_SESSION['section4OtherDiet'] ? $_SESSION['section4OtherDiet'] : $_SESSION['section4Diet']) . "</td></tr>";
 
-          //Section 5
+            echo '</tbody></table>';
+          }
+            ?>
+          <!-- Section 5 -->
 
-          //Section 7
+          <?php
+          if($_SESSION['section5Name']){
+          echo '<div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Rotary Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Advisor Type:</th> <th>Diet:</th> </tr> </thead> <tbody>';
+                  echo "<tr><td>" .  $_SESSION['section5Name'] . "</td>".
+                  "<td>" . $_SESSION['section5ClubName'] . "</td>".
+                  "<td>" . $_SESSION['section5Email'] . "</td>".
+                  "<td>" . $_SESSION['section5Phone'] . "</td>".
+                  "<td>" . ($_SESSION['section5OtherGender'] ? $_SESSION['section5OtherGender'] : $_SESSION['section5Gender']) . "</td>".
+                  "<td>" . $_SESSION['section5AdvisorType'] . "</td>".
+                  "<td>" . ($_SESSION['section5OtherDiet'] ? $_SESSION['section5OtherDiet'] : $_SESSION['section5Diet']) . "</td></tr>";
 
-          //Section 8
+            echo '</tbody></table>';
+          }
+            ?>
+          <!-- Section 6 -->
+          <?php
+          if($_SESSION['section6GroupName']){
+          echo '<div class="table-responsive"> <table class="table"> <thead> <tr> <th>Group Name:</th> <th>Primary Contact Name:</th> <th>Primary Contact Email:</th> <th>Primary Contact Phone Number:</th> </tr> </thead> <tbody>';
+                  echo "<tr><td>" .  $_SESSION['section6GroupName'] . "</td>".
+                  "<td>" . $_SESSION['section6ContactName'] . "</td>".
+                  "<td>" . $_SESSION['section6ContactEmail'] . "</td>".
+                  "<td>" . $_SESSION['section6ContactPhone'] . "</td></tr>";
 
-          //Section 9
+            echo '</tbody></table>';
+          }
+            ?>
+          <!-- Section 7 -->
 
-          //End
+          <!-- Section 8 -->
+
+          <!-- Section 9 -->
+
+          <!-- End -->
           <script>
           $(document).ready(function() {
             $('.table').DataTable({
