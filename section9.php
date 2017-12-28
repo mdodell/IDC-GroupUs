@@ -2,8 +2,18 @@
 session_start();
 echo("<script>console.log('Initial attempt');</script>");
 if(isset($_POST['submit'])){
-    echo("<script>console.log('Finished attempt');</script>");
-    echo("<script>window.location = 'section10.php';</script>");
+  $_SESSION['section9Amount'] = $_POST['advisorAmount'];
+  $_SESSION['section9Names'] = $_POST['name'];
+  $_SESSION['section9Ages'] = $_POST['age'];
+  $_SESSION['section9Genders'] = $_POST['gender'];
+  $_SESSION['section9OtherGenders'] = $_POST['other'];
+  $_SESSION['section9ClubNames'] = $_POST['rotaryClubName'];
+  $_SESSION['section9Emails'] = $_POST['email'];
+  $_SESSION['section9Phones'] = $_POST['phone'];
+  $_SESSION['section9Diets'] = $_POST['diet'];
+  $_SESSION['section9OtherDiets'] = $_POST['otherDiet'];
+  echo("<script>console.log('Finished attempt');</script>");
+  echo("<script>window.location = 'section10.php';</script>");
 }
 ?>
 
@@ -62,20 +72,20 @@ if(isset($_POST['submit'])){
               console.log(index);
               console.log($(".otherField:eq("+index+")")[0]);
               if(name=='Other'){
-                $(".otherField:eq("+index+")")[0].innerHTML='<input type="text" name="other" class="form-control" placeholder="Non-binary, agender, etc." aria-describedby="sizing-addon1" required />';
+                $(".otherField:eq("+index+")")[0].innerHTML='<input type="text" name="other[]" class="form-control" placeholder="Non-binary, agender, etc." aria-describedby="sizing-addon1" required/>';
               }
               else{
-                $(".otherField:eq("+index+")")[0].innerHTML='';
+                $(".otherField:eq("+index+")")[0].innerHTML='<input type="hidden" name="other[]" class="form-control" placeholder="Non-binary, agender, etc." aria-describedby="sizing-addon1"/>';
               }
             }
             function showOtherDietField(name,index){
               console.log(index);
               console.log($(".otherDietField:eq("+index+")")[0]);
               if(name=='Other'){
-                $(".otherDietField:eq("+index+")")[0].innerHTML='<input type="text" name="otherDiet" class="form-control" placeholder="Enter your other dietary restrictions here" aria-describedby="sizing-addon1" required />';
+                $(".otherDietField:eq("+index+")")[0].innerHTML='<input type="text" name="otherDiet[]" class="form-control" placeholder="Enter your other dietary restrictions here" aria-describedby="sizing-addon1" required/>';
               }
               else{
-                $(".otherDietField:eq("+index+")")[0].innerHTML='';
+                $(".otherDietField:eq("+index+")")[0].innerHTML='<input type="hidden" name="otherDiet[]" class="form-control" placeholder="Enter your other dietary restrictions here" aria-describedby="sizing-addon1"/>';
               }
             }
             function getInputs(amount){
@@ -86,9 +96,9 @@ if(isset($_POST['submit'])){
                 for (i = 0; i < amount; i++) {
                   console.log("In loop test");
                   myHtml = myHtml + '<p>Member #'+ parseInt(i+1) + ':</p><br>' + '<div class="input-group input-group-lg"> <span class="input-group-addon" id="sizing-addon1">Name</span> <input type="text" name="name[]" class="form-control" placeholder="Your first/last name" aria-describedby="sizing-addon1" required> </div> <br>' + '<div class="input-group input-group-lg"> <span class="input-group-addon" id="sizing-addon1">Age</span> <input type="number" name="age" class="form-control" placeholder="I.e. 18, 28, etc." aria-describedby="sizing-addon1" required> </div><br>';
-                  myHtml = myHtml + '<div class="form-group"> <label for="gender[]">Gender:</label> <div id="'+i+'"><select required class="form-control" id="gender[]" onchange="showOtherField(this.options[this.selectedIndex].value, this.parentElement.id)"> <option value="">Please select an option</option> <option value="Male">Male</option> <option value="Female">Female</option> <option value="Prefer not to say">Prefer not to say</option> <option value="Other">Other:</option> </select> </div> </div> <div id="otherField" class="otherField"></div> <br>' + '<div class="input-group input-group-lg"> <span class="input-group-addon" id="sizing-addon1">Rotary Club/School Name</span> <input type="text" name="rotaryClubName[]" class="form-control" placeholder="I.e. Phoenix Squaw Peak Rotary Club, Centennial High School, etc." aria-describedby="sizing-addon1" required> </div> <br>';
+                  myHtml = myHtml + '<div class="form-group"> <label for="gender[]">Gender:</label> <div id="'+i+'"><select required class="form-control" id="gender[]" name="gender[]" onchange="showOtherField(this.options[this.selectedIndex].value, this.parentElement.id)"> <option value="">Please select an option</option> <option value="Male">Male</option> <option value="Female">Female</option> <option value="Prefer not to say">Prefer not to say</option> <option value="Other">Other:</option> </select> </div> </div> <div id="otherField" class="otherField"></div> <br>' + '<div class="input-group input-group-lg"> <span class="input-group-addon" id="sizing-addon1">Rotary Club/School Name</span> <input type="text" name="rotaryClubName[]" class="form-control" placeholder="I.e. Phoenix Squaw Peak Rotary Club, Centennial High School, etc." aria-describedby="sizing-addon1" required> </div> <br>';
                   myHtml = myHtml + '<div class="input-group input-group-lg"> <span class="input-group-addon" id="sizing-addon1">E-mail</span> <input type="email" name="email[]" class="form-control" placeholder="In proper user@example.com format" aria-describedby="sizing-addon1" required> </div><br>' + '<div class="input-group input-group-lg"> <span class="input-group-addon" id="sizing-addon1">Phone Number</span> <input type="tel" name="phone[]" class="form-control" placeholder="In proper 123-456-7890 format" aria-describedby="sizing-addon1" required> </div> <br>';
-                  myHtml = myHtml + '<div class="form-group"> <label for="diet[]">Dietary Restrictions:</label> <div id="'+i+'"><select required class="form-control" id="diet[]" onchange="showOtherDietField(this.options[this.selectedIndex].value, this.parentElement.id)"> <option value="">Please select an option</option> <option value="Vegetarian">Vegetarian</option> <option value="Vegan">Vegan</option> <option value="Kosher">Kosher</option> <option value="Halal">Halal</option> <option value="Gluten-Free">Gluten-Free</option> <option value="Daily-Free">Dairy-Free</option> <option value="None">None</option> <option value="Other">Other:</option> </select> </div> </div> <div id="otherDietField" class="otherDietField"></div> <br>';
+                  myHtml = myHtml + '<div class="form-group"> <label for="diet[]">Dietary Restrictions:</label> <div id="'+i+'"><select required class="form-control" id="diet[]" name="diet[]" onchange="showOtherDietField(this.options[this.selectedIndex].value, this.parentElement.id)"> <option value="">Please select an option</option> <option value="Vegetarian">Vegetarian</option> <option value="Vegan">Vegan</option> <option value="Kosher">Kosher</option> <option value="Halal">Halal</option> <option value="Gluten-Free">Gluten-Free</option> <option value="Daily-Free">Dairy-Free</option> <option value="None">None</option> <option value="Other">Other:</option> </select> </div> </div> <div id="otherDietField" class="otherDietField"></div> <br>';
 
                 }
                 myHtml = myHtml + '<p><input class="btn btn-primary btn-lg" type="submit" name="submit" role="button"></p>';

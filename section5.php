@@ -3,6 +3,19 @@ session_start();
 echo("<script>console.log('Initial attempt');</script>");
 if(isset($_POST['submit'])){
     echo("<script>console.log('Finished attempt');</script>");
+    $_SESSION['section5Name'] = $_POST['name'];
+    $_SESSION['section5ClubName'] = $_POST['rotaractClubName'];
+    $_SESSION['section5Email'] = $_POST['email'];
+    $_SESSION['section5Phone'] = $_POST['phone'];
+    $_SESSION['section5Gender'] = $_POST['gender'];
+    if ($_POST['other'] != null){
+        $_SESSION['section5OtherGender'] = $_POST['other'];
+    }
+    $_SESSION['section5AdvisorType'] = $_POST['advisorType'];
+    $_SESSION['section5Diet'] = $_POST['diet'];
+    if ($_POST['otherDiet'] != null){
+        $_SESSION['section5OtherDiet'] = $_POST['otherDiet'];
+    }
     echo("<script>window.location = 'section10.php';</script>");
 }
 ?>
@@ -99,8 +112,8 @@ if(isset($_POST['submit'])){
       <br>
 
       <div class="form-group">
-        <label for="advisortype">Advisor Type:</label>
-        <select required class="form-control" id="advisortype">
+        <label for="advisorType">Advisor Type:</label>
+        <select required class="form-control" id="advisorType" name="advisorType">
           <option value="">Please select an option</option>
           <option value="Rotarian Advisor">Rotarian Advisor</option>
           <option value="Faculty Advisor">Faculty Advisor</option>

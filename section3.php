@@ -3,6 +3,20 @@ session_start();
 echo("<script>console.log('Initial attempt');</script>");
 if(isset($_POST['submit'])){
     echo("<script>console.log('Finished attempt');</script>");
+    $_SESSION['section3Name'] = $_POST['name'];
+    $_SESSION['section3ClubName'] = $_POST['interactClubName'];
+    $_SESSION['section3Email'] = $_POST['email'];
+    $_SESSION['section3Phone'] = $_POST['phone'];
+    $_SESSION['section3Gender'] = $_POST['gender'];
+    if ($_POST['other'] != null){
+        $_SESSION['section3OtherGender'] = $_POST['other'];
+    }
+    $_SESSION['section3Grade'] = $_POST['grade'];
+    $_SESSION['section3Diet'] = $_POST['diet'];
+    if ($_POST['otherDiet'] != null){
+        $_SESSION['section3OtherDiet'] = $_POST['otherDiet'];
+    }
+
     echo("<script>window.location = 'section10.php';</script>");
 }
 ?>
@@ -87,7 +101,7 @@ if(isset($_POST['submit'])){
 
       <div class="form-group">
         <label for="gender">Gender:</label>
-        <select required class="form-control" id="gender" onchange="showOtherField(this.options[this.selectedIndex].value)">
+        <select required class="form-control" id="gender" name="gender" onchange="showOtherField(this.options[this.selectedIndex].value)">
           <option value="">Please select an option</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
@@ -100,7 +114,7 @@ if(isset($_POST['submit'])){
 
       <div class="form-group">
         <label for="grade">Grade:</label>
-        <select required class="form-control" id="grade">
+        <select required class="form-control" id="grade" name="grade">
           <option value="">Please select an option</option>
           <option value="6th">6th</option>
           <option value="7th">7th</option>
@@ -126,7 +140,7 @@ if(isset($_POST['submit'])){
       </script>
       <div class="form-group">
         <label for="diet">Dietary Restrictions:</label>
-        <select required class="form-control" id="diet" onchange="showOtherDietField(this.options[this.selectedIndex].value)">
+        <select required class="form-control" id="diet" name="diet" onchange="showOtherDietField(this.options[this.selectedIndex].value)">
           <option value="">Please select an option</option>
           <option value="Vegetarian">Vegetarian</option>
           <option value="Vegan">Vegan</option>
