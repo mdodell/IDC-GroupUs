@@ -19,9 +19,9 @@ session_start();
 
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
-  <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" rel="stylesheet">
-
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+
+  <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" rel="stylesheet">
 
   <!--[if lt IE 9]>
 
@@ -33,13 +33,18 @@ session_start();
 
   <!-- JS assets -->
 
-  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+  <script src="//use.fonticons.com/981576d2.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
 
   <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
   <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 
-  <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
 
 
 
@@ -64,16 +69,16 @@ session_start();
 
         //Section 3
         <?php
-        echo "<div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Course Name:</th> <th>Course Code:</th> <th>Course Section:</th> </tr> </thead> <tbody>";
+        echo '<div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Grade:</th> <th>Diet:</th> </tr> </thead> <tbody>';
+                echo "<tr><td>" .  $_SESSION['section3Name'] . "</td>".
+                "<td>" . $_SESSION['section3ClubName'] . "</td>".
+                "<td>" . $_SESSION['section3Email'] . "</td>".
+                "<td>" . $_SESSION['section3Phone'] . "</td>".
+                "<td>" . ($_SESSION['section3OtherGender'] ? $_SESSION['section3OtherGender'] : $_SESSION['section3Gender']) . "</td>".
+                "<td>" . $_SESSION['section3Grade'] . "</td>".
+                "<td>" . ($_SESSION['section3OtherDiet'] ? $_SESSION['section3OtherDiet'] : $_SESSION['section3Diet']) . "</td></tr>";
 
-              while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) {
-                echo "<tr><td>{$row['studentName']}</td>".
-                "<td>{$row['className']}</td>".
-                "<td>{$row['classCode']}</td>".
-                "<td>{$row['classSection']}</td></tr>";
-              }
-
-          echo "</tbody></table>";
+          echo '</tbody></table>';
           ?>
           //Section 4
 
@@ -99,11 +104,6 @@ session_start();
       </div>
 
     </div>
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 
