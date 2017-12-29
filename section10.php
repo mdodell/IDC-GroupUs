@@ -175,6 +175,9 @@ session_start();
           }
             ?>
           <!-- End -->
+          <?php
+          $_SESSION = array();
+           ?>
           <script>
           $(document).ready(function() {
             $('.table').DataTable({
