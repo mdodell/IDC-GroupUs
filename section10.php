@@ -67,10 +67,12 @@ session_start();
 
         <h4>Thank you for completing registration! You will receive a confirmation email promptly.</h4>
 
+        <br>
+
         <!-- Section 3 -->
         <?php
         if($_SESSION['section3Name']){
-        echo '<div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Interact Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Grade:</th> <th>Diet:</th> </tr> </thead> <tbody>';
+        echo '<h4>Registered Individual Interactor:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Interact Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Grade:</th> <th>Diet:</th> </tr> </thead> <tbody>';
                 echo "<tr><td>" .  $_SESSION['section3Name'] . "</td>".
                 "<td>" . $_SESSION['section3ClubName'] . "</td>".
                 "<td>" . $_SESSION['section3Email'] . "</td>".
@@ -79,13 +81,13 @@ session_start();
                 "<td>" . $_SESSION['section3Grade'] . "</td>".
                 "<td>" . ($_SESSION['section3OtherDiet'] ? $_SESSION['section3OtherDiet'] : $_SESSION['section3Diet']) . "</td></tr>";
 
-          echo '</tbody></table>';
+          echo '</tbody></table><br>';
         }
           ?>
           <!-- Section 4 -->
           <?php
           if($_SESSION['section4Name']){
-          echo '<div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Rotaract Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Age:</th> <th>Diet:</th> </tr> </thead> <tbody>';
+          echo '<h4>Registered Individual Rotaractor:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Rotaract Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Age:</th> <th>Diet:</th> </tr> </thead> <tbody>';
                   echo "<tr><td>" .  $_SESSION['section4Name'] . "</td>".
                   "<td>" . $_SESSION['section4ClubName'] . "</td>".
                   "<td>" . $_SESSION['section4Email'] . "</td>".
@@ -94,14 +96,14 @@ session_start();
                   "<td>" . $_SESSION['section4Age'] . "</td>".
                   "<td>" . ($_SESSION['section4OtherDiet'] ? $_SESSION['section4OtherDiet'] : $_SESSION['section4Diet']) . "</td></tr>";
 
-            echo '</tbody></table>';
+            echo '</tbody></table><br>';
           }
             ?>
           <!-- Section 5 -->
 
           <?php
           if($_SESSION['section5Name']){
-          echo '<div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Rotary Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Advisor Type:</th> <th>Diet:</th> </tr> </thead> <tbody>';
+          echo '<h4>Registered Individual Rotarian:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Rotary Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Advisor Type:</th> <th>Diet:</th> </tr> </thead> <tbody>';
                   echo "<tr><td>" .  $_SESSION['section5Name'] . "</td>".
                   "<td>" . $_SESSION['section5ClubName'] . "</td>".
                   "<td>" . $_SESSION['section5Email'] . "</td>".
@@ -110,25 +112,25 @@ session_start();
                   "<td>" . $_SESSION['section5AdvisorType'] . "</td>".
                   "<td>" . ($_SESSION['section5OtherDiet'] ? $_SESSION['section5OtherDiet'] : $_SESSION['section5Diet']) . "</td></tr>";
 
-            echo '</tbody></table>';
+            echo '</tbody></table><br>';
           }
             ?>
           <!-- Section 6 -->
           <?php
           if($_SESSION['section6GroupName']){
-          echo '<div class="table-responsive"> <table class="table"> <thead> <tr> <th>Group Name:</th> <th>Primary Contact Name:</th> <th>Primary Contact Email:</th> <th>Primary Contact Phone Number:</th> </tr> </thead> <tbody>';
+          echo '<h4>Registered Group Information:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Group Name:</th> <th>Primary Contact Name:</th> <th>Primary Contact Email:</th> <th>Primary Contact Phone Number:</th> </tr> </thead> <tbody>';
                   echo "<tr><td>" .  $_SESSION['section6GroupName'] . "</td>".
                   "<td>" . $_SESSION['section6ContactName'] . "</td>".
                   "<td>" . $_SESSION['section6ContactEmail'] . "</td>".
                   "<td>" . $_SESSION['section6ContactPhone'] . "</td></tr>";
 
-            echo '</tbody></table>';
+            echo '</tbody></table><br>';
           }
             ?>
           <!-- Section 7 -->
           <?php
           if($_SESSION['section7Names']){
-          echo '<div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Advisor Type:</th> <th>Gender:</th> <th>Club Name:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
+          echo '<h4>Registered Faculty/Rotarian Advisors:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Advisor Type:</th> <th>Gender:</th> <th>Club Name:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
                   for($i=0; $i<count($_SESSION['section7Names']); $i++){
                   echo "<tr><td>" .  $_SESSION['section7Names'][$i] . "</td>".
                   "<td>" . $_SESSION['section7AdvisorTypes'][$i] . "</td>".
@@ -138,13 +140,40 @@ session_start();
                   "<td>" . $_SESSION['section7Phones'][$i] . "</td>".
                   "<td>" . ($_SESSION['section7OtherDiets'][$i] ? $_SESSION['section7OtherDiets'][$i] : $_SESSION['section7Diets'][$i]) . "</td></tr>";
                   }
-            echo '</tbody></table>';
+            echo '</tbody></table><br>';
           }
             ?>
           <!-- Section 8 -->
-
+          <?php
+          if($_SESSION['section8Names']){
+          echo '<h4>Registered Students:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Grade:</th> <th>Gender:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
+                  for($i=0; $i<count($_SESSION['section8Names']); $i++){
+                  echo "<tr><td>" .  $_SESSION['section8Names'][$i] . "</td>".
+                  "<td>" . $_SESSION['section8Grades'][$i] . "</td>".
+                  "<td>" . ($_SESSION['section8OtherGenders'][$i] ? $_SESSION['section8OtherGenders'][$i] : $_SESSION['section8Genders'][$i]) . "</td>".
+                  "<td>" . $_SESSION['section8Emails'][$i] . "</td>".
+                  "<td>" . $_SESSION['section8Phones'][$i] . "</td>".
+                  "<td>" . ($_SESSION['section8OtherDiets'][$i] ? $_SESSION['section8OtherDiets'][$i] : $_SESSION['section8Diets'][$i]) . "</td></tr>";
+                  }
+            echo '</tbody></table><br>';
+          }
+            ?>
           <!-- Section 9 -->
-
+          <?php
+          if($_SESSION['section9Names']){
+          echo '<h4>Registered Rotaractors:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Age:</th> <th>Gender:</th> <th>Club Name:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
+                  for($i=0; $i<count($_SESSION['section9Names']); $i++){
+                  echo "<tr><td>" .  $_SESSION['section9Names'][$i] . "</td>".
+                  "<td>" . $_SESSION['section9Ages'][$i] . "</td>".
+                  "<td>" . ($_SESSION['section9OtherGenders'][$i] ? $_SESSION['section9OtherGenders'][$i] : $_SESSION['section9Genders'][$i]) . "</td>".
+                  "<td>" . $_SESSION['section9ClubNames'][$i] . "</td>".
+                  "<td>" . $_SESSION['section9Emails'][$i] . "</td>".
+                  "<td>" . $_SESSION['section9Phones'][$i] . "</td>".
+                  "<td>" . ($_SESSION['section9OtherDiets'][$i] ? $_SESSION['section9OtherDiets'][$i] : $_SESSION['section9Diets'][$i]) . "</td></tr>";
+                  }
+            echo '</tbody></table><br>';
+          }
+            ?>
           <!-- End -->
           <script>
           $(document).ready(function() {

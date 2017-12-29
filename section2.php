@@ -49,7 +49,7 @@
 
         <h2>Individual Registration</h2>
 
-        <h4>Please select if you are a Interactor, Rotarian, or Rotaractor:</h4>
+        <h4>Please select if you are a Interactor, Rotaractor, or Rotarian:</h4>
 
         <br>
 
