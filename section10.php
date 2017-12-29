@@ -126,7 +126,21 @@ session_start();
           }
             ?>
           <!-- Section 7 -->
-
+          <?php
+          if($_SESSION['section7Names']){
+          echo '<div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Advisor Type:</th> <th>Gender:</th> <th>Club Name:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
+                  for($i=0; $i<count($_SESSION['section7Names']); $i++){
+                  echo "<tr><td>" .  $_SESSION['section7Names'][$i] . "</td>".
+                  "<td>" . $_SESSION['section7AdvisorTypes'][$i] . "</td>".
+                  "<td>" . ($_SESSION['section7OtherGenders'][$i] ? $_SESSION['section7OtherGenders'][$i] : $_SESSION['section7Genders'][$i]) . "</td>".
+                  "<td>" . $_SESSION['section7ClubNames'][$i] . "</td>".
+                  "<td>" . $_SESSION['section7Emails'][$i] . "</td>".
+                  "<td>" . $_SESSION['section7Phones'][$i] . "</td>".
+                  "<td>" . ($_SESSION['section7OtherDiets'][$i] ? $_SESSION['section7OtherDiets'][$i] : $_SESSION['section7Diets'][$i]) . "</td></tr>";
+                  }
+            echo '</tbody></table>';
+          }
+            ?>
           <!-- Section 8 -->
 
           <!-- Section 9 -->
