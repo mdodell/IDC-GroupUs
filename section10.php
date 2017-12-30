@@ -274,8 +274,7 @@ session_start();
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
         // Additional headers
-        $headers .= 'From: IDC <idc5495contact@gmail.com>' . "\r\n";
-
+        
         if($_SESSION['section3Email']){
           $headers .= 'Cc: ' . $_SESSION['section3Email'] . "\r\n";
         }
