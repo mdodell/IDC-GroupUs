@@ -274,6 +274,20 @@ session_start();
 
         // Additional headers
         $headers .= 'From: Adam\'s Web Server <adam@adamfly.me>' . "\r\n";
+        
+        if($_SESSION['section3Email']){
+        $headers .= 'Cc: ' . $_SESSION['section3Email'] . "\r\n";
+        }
+        else if($_SESSION['section4Email']){
+        $headers .= 'Cc: ' . $_SESSION['section4Email'] . "\r\n";
+        }
+        else if($_SESSION['section5Email']){
+        $headers .= 'Cc: ' . $_SESSION['section5Email'] . "\r\n";
+        }
+        else{
+        $headers .= 'Cc: ' . $_SESSION['section6ContactEmail'] . "\r\n";
+        }
+
 
         // Mail it
         mail($to, $subject, $message, $headers);
