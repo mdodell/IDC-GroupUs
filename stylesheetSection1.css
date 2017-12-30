@@ -1,0 +1,56 @@
+body {
+    background-color: #ECECEC;
+}
+
+.header {
+    position: absolute;
+    text-align: center;
+    font-family: Lato, sans-serif;
+    width: 100%;
+    font-size: 55px;
+    color: #47525E;
+    top: 0%;
+}
+
+.subheader {
+    position: absolute;
+    text-align: center;
+    font-family: Lato, sans-serif;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 1;
+    color: #47525E;
+    top: 22%;
+}
+
+.individualButton {
+    position: absolute;
+    background-color: #00A6FF;
+    width: 300px;
+    height: 75px;
+    color: white;
+    font-size: 24px;
+    top: 350px;
+    left: 350px;
+    font-family: Lato, sans-serif;
+}
+
+.groupButton {
+    position: absolute;
+    background-color: #00A6FF;
+    width: 300px;
+    height: 75px;
+    color: white;
+    font-size: 24px;
+    top: 350px;
+    right: 350px;
+    font-family: Lato, sans-serif;
+}
+
+
+.interactImage{
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
+    width: 30%;
+}
