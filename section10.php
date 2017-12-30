@@ -180,7 +180,7 @@ session_start();
         $to .= 'mdodell@brandeis.edu';
 
         // Subject
-        $subject = 'An Email Test';
+        $subject = 'IDC Email Test ' + date('Y/m/d H:i:s');
 
         // Message
         $message = '<html lang="en"> <head></head> <body> <h2>Interact District Conference 2018 Registration Confirmation</h2> <br>';
