@@ -183,7 +183,8 @@ session_start();
         $subject = 'IDC Email Test ' . date('Y/m/d H:i:s');
 
         // Message
-        $message = '<html lang="en"> <head></head> <body> <h2>Interact District Conference 2018 Registration Confirmation</h2> <br>';
+        $message = '<html lang="en"> <head>  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        </head> <body> <h2>Interact District Conference 2018 Registration Confirmation</h2> <br>';
 
         if($_SESSION['section3Name']){
           $message = $message . '<h4>Registered Individual Interactor:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Interact Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Grade:</th> <th>Diet:</th> </tr> </thead> <tbody>';
@@ -273,19 +274,19 @@ session_start();
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
         // Additional headers
-        $headers .= 'From: Adam\'s Web Server <adam@adamfly.me>' . "\r\n";
-        
+        $headers .= 'From: IDC <idc5495contact@gmail.com>' . "\r\n";
+
         if($_SESSION['section3Email']){
-        $headers .= 'Cc: ' . $_SESSION['section3Email'] . "\r\n";
+          $headers .= 'Cc: ' . $_SESSION['section3Email'] . "\r\n";
         }
         else if($_SESSION['section4Email']){
-        $headers .= 'Cc: ' . $_SESSION['section4Email'] . "\r\n";
+          $headers .= 'Cc: ' . $_SESSION['section4Email'] . "\r\n";
         }
         else if($_SESSION['section5Email']){
-        $headers .= 'Cc: ' . $_SESSION['section5Email'] . "\r\n";
+          $headers .= 'Cc: ' . $_SESSION['section5Email'] . "\r\n";
         }
         else{
-        $headers .= 'Cc: ' . $_SESSION['section6ContactEmail'] . "\r\n";
+          $headers .= 'Cc: ' . $_SESSION['section6ContactEmail'] . "\r\n";
         }
 
 
