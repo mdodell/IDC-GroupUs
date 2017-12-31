@@ -178,7 +178,7 @@ session_start();
         <?php
         $excelData = '';
         if($_SESSION['section3Name']){
-          $excelData = $excelData . '<table class="table"> <thead> <tr> <th>Name:</th> <th>Interact Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Grade:</th> <th>Diet:</th> </tr> </thead> <tbody>';
+          $excelData = $excelData . '<table> <thead> <tr> <th>Name:</th> <th>Interact Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Grade:</th> <th>Diet:</th> </tr> </thead> <tbody>';
           $excelData = $excelData . "<tr><td>" .  $_SESSION['section3Name'] . "</td>".
           "<td>" . $_SESSION['section3ClubName'] . "</td>".
           "<td>" . $_SESSION['section3Email'] . "</td>".
@@ -190,7 +190,7 @@ session_start();
           $excelData = $excelData . '</tbody></table><br>';
         }
         if($_SESSION['section4Name']){
-          $excelData = $excelData . '<table class="table"> <thead> <tr> <th>Name:</th> <th>Rotaract Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Age:</th> <th>Diet:</th> </tr> </thead> <tbody>';
+          $excelData = $excelData . '<table> <thead> <tr> <th>Name:</th> <th>Rotaract Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Age:</th> <th>Diet:</th> </tr> </thead> <tbody>';
           $excelData = $excelData . "<tr><td>" .  $_SESSION['section4Name'] . "</td>".
           "<td>" . $_SESSION['section4ClubName'] . "</td>".
           "<td>" . $_SESSION['section4Email'] . "</td>".
@@ -202,7 +202,7 @@ session_start();
           $excelData = $excelData . '</tbody></table><br>';
         }
         if($_SESSION['section5Name']){
-          $excelData = $excelData . '<table class="table"> <thead> <tr> <th>Name:</th> <th>Rotary Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Advisor Type:</th> <th>Diet:</th> </tr> </thead> <tbody>';
+          $excelData = $excelData . '<table> <thead> <tr> <th>Name:</th> <th>Rotary Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Advisor Type:</th> <th>Diet:</th> </tr> </thead> <tbody>';
           $excelData = $excelData . "<tr><td>" .  $_SESSION['section5Name'] . "</td>".
           "<td>" . $_SESSION['section5ClubName'] . "</td>".
           "<td>" . $_SESSION['section5Email'] . "</td>".
@@ -214,7 +214,7 @@ session_start();
           $excelData = $excelData . '</tbody></table><br>';
         }
         if($_SESSION['section6GroupName']){
-          $excelData = $excelData . '<table class="table"> <thead> <tr> <th>Group Name:</th> <th>Primary Contact Name:</th> <th>Primary Contact Email:</th> <th>Primary Contact Phone Number:</th> </tr> </thead> <tbody>';
+          $excelData = $excelData . '<table> <thead> <tr> <th>Group Name:</th> <th>Primary Contact Name:</th> <th>Primary Contact Email:</th> <th>Primary Contact Phone Number:</th> </tr> </thead> <tbody>';
           $excelData = $excelData . "<tr><td>" .  $_SESSION['section6GroupName'] . "</td>".
           "<td>" . $_SESSION['section6ContactName'] . "</td>".
           "<td>" . $_SESSION['section6ContactEmail'] . "</td>".
@@ -223,7 +223,7 @@ session_start();
           $excelData = $excelData . '</tbody></table><br>';
         }
         if($_SESSION['section7Names']){
-          $excelData = $excelData . '<table class="table"> <thead> <tr> <th>Name:</th> <th>Advisor Type:</th> <th>Gender:</th> <th>Club Name:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
+          $excelData = $excelData . '<table> <thead> <tr> <th>Name:</th> <th>Advisor Type:</th> <th>Gender:</th> <th>Club Name:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
           for($i=0; $i<count($_SESSION['section7Names']); $i++){
             $excelData = $excelData . "<tr><td>" .  $_SESSION['section7Names'][$i] . "</td>".
             "<td>" . $_SESSION['section7AdvisorTypes'][$i] . "</td>".
@@ -236,7 +236,7 @@ session_start();
           $excelData = $excelData . '</tbody></table><br>';
         }
         if($_SESSION['section8Names']){
-          $excelData = $excelData . '<table class="table"> <thead> <tr> <th>Name:</th> <th>Grade:</th> <th>Gender:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
+          $excelData = $excelData . '<table> <thead> <tr> <th>Name:</th> <th>Grade:</th> <th>Gender:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
           for($i=0; $i<count($_SESSION['section8Names']); $i++){
             $excelData = $excelData . "<tr><td>" .  $_SESSION['section8Names'][$i] . "</td>".
             "<td>" . $_SESSION['section8Grades'][$i] . "</td>".
@@ -248,7 +248,7 @@ session_start();
           $excelData = $excelData . '</tbody></table><br>';
         }
         if($_SESSION['section9Names']){
-          $excelData = $excelData . '<table class="table"> <thead> <tr> <th>Name:</th> <th>Age:</th> <th>Gender:</th> <th>Club Name:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
+          $excelData = $excelData . '<table> <thead> <tr> <th>Name:</th> <th>Age:</th> <th>Gender:</th> <th>Club Name:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
           for($i=0; $i<count($_SESSION['section9Names']); $i++){
             $excelData = $excelData . "<tr><td>" .  $_SESSION['section9Names'][$i] . "</td>".
             "<td>" . $_SESSION['section9Ages'][$i] . "</td>".
