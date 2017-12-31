@@ -178,7 +178,7 @@ body {
 }
 
 /*  large screens format */
-@media only screen and (max-width: 1441px) {
+@media (max-width: 1441px) {
 
             .header {
             /* Sizing */
@@ -248,7 +248,7 @@ body {
 }
 
 /*  big landscape tablets, laptops, and desktops format */
-@media only screen and (max-width: 1281px) {
+@media (max-width: 1281px) {
 
             .header {
             /* Sizing */
@@ -318,7 +318,7 @@ body {
 }
 
 /* Tablet, iPads, Res Laptops and Desktops Format */
-@media only screen and (max-width: 1025px) {
+@media (max-width: 1025px) {
 
            .subheader {
 
@@ -380,7 +380,7 @@ body {
 }
 
 /* tablet, landscape iPad, lo-res laptops ands desktops Format */
-@media only screen and (max-width: 800px) {
+@media (max-width: 800px) {
 
            .subheader {
 
