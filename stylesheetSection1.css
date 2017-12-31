@@ -385,14 +385,14 @@ body {
            .subheader {
 
             /* Sizing */
-            width: 75%;
+            width: 60%;
             height: 100%;
             font-size: 30px;
 
             /* Alignment */
             position: relative;
             text-align: center;
-            margin-top: 37%;
+            margin-top: 38%;
 
             }
 
@@ -402,7 +402,7 @@ body {
             border-radius: 43px;
             width: 40%;
             height: 25%;
-            font-size: 20px;
+            font-size: 40px;
 
             /* Alignment */
             position: absolute;
@@ -417,7 +417,7 @@ body {
             border-radius: 43px;
             width: 40%;
             height: 25%;
-            font-size: 20px;
+            font-size: 40px;
 
             /* Alignment */
             position: absolute;
@@ -469,7 +469,7 @@ body {
             border-radius: 43px;
             width: 40%;
             height: 25%;
-            font-size: 30px;
+            font-size: 40px;
 
             /* Alignment */
             position: absolute;
@@ -484,7 +484,7 @@ body {
             border-radius: 43px;
             width: 40%;
             height: 25%;
-            font-size: 30px;
+            font-size: 40px;
 
             /* Alignment */
             position: absolute;
@@ -665,7 +665,6 @@ body {
             /* Sizing */
             font-size: 15px;
         }
-
 
 
 }
