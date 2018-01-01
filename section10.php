@@ -65,7 +65,11 @@ session_start();
 
         <h2>Interact District Conference 2018 Registration - Thank You!</h2>
 
-        <h4>Thank you for completing registration! You will receive a confirmation email promptly.</h4>
+        <h4>Thank you for completing registration! Please make sure of your submission status below.</h4>
+
+        <br>
+
+        <div id="confirmStatus"></div>
 
         <br>
 
@@ -176,6 +180,7 @@ session_start();
         ?>
         <!-- File creation -->
         <?php
+        include "simple_html_dom.php";
         $excelData = '';
         if($_SESSION['section3Name']){
           $excelData = $excelData . '<table> <thead> <tr> <th>Name:</th> <th>Interact Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Grade:</th> <th>Diet:</th> </tr> </thead> <tbody>';
@@ -273,8 +278,30 @@ session_start();
         else{
           $excelFileName = 'Group - ' . $_SESSION['section6GroupName'];
         }
-        $excelFileName = $excelFileName . '.xls';
-        file_put_contents($excelFileName, $excelData);
+        $excelFileName = $excelFileName . '.csv';
+        $html = str_get_html($excelData);
+        $fp = fopen($excelFileName, "w");
+
+        foreach($html->find('tr') as $element)
+        {
+          $td = array();
+          foreach( $element->find('th') as $row)
+          {
+            $td [] = $row->plaintext;
+          }
+          fputcsv($fp, $td);
+
+          $td = array();
+          foreach( $element->find('td') as $row)
+          {
+            $td [] = $row->plaintext;
+          }
+          fputcsv($fp, $td);
+        }
+
+
+        fclose($fp);
+        // file_put_contents($excelFileName, $fp);
         ?>
 
         <?php
@@ -420,7 +447,7 @@ session_start();
         $message .= "Content-Transfer-Encoding: 8bit".$eol.$eol;
         $message .= $body.$eol;
         $message .= "--".$uid.$eol;
-        $message .= "Content-Type: application/vnd.ms-excel; name=\"".$filename."\"".$eol;
+        $message .= "Content-Type: application/ms-excel; name=\"".$filename."\"".$eol;
         $message .= "Content-Transfer-Encoding: base64".$eol;
         $message .= "Content-Disposition: attachment; filename=\"".$filename."\"".$eol;
         $message .= $content.$eol;
@@ -428,11 +455,11 @@ session_start();
 
         if (mail($to, $subject, $message, $headers))
         {
-          echo "<script>console.log('mail_success');</script>";
+          echo "<script>document.getElementById('confirmStatus').innerHTML = \"<div class='alert alert-success'><strong>Success!</strong> Confirmation email sent!</div>\";</script>";
         }
         else
         {
-          echo "<script>console.log('mail_error');</script>";
+          echo "<script>document.getElementById('confirmStatus').innerHTML = \"<div class='alert alert-danger'><strong>Warning!</strong> Confirmation email failed to send. Please try again or contact IDC.</div>\";</script>";
         }
         $_SESSION = array();
         ?>
