@@ -107,9 +107,478 @@ body {
 
 /* Responsive Formatting */
 
+/*  big screens format */
+@media only screen and (max-width: 1920px) {
 
-/* iPhone X Format */
-@media only screen and (max-width: 375px) and (max-height: 812px) {
+            .header {
+            /* Sizing */
+
+            font-size: 70px;
+            }
+
+           .subheader {
+
+            /* Sizing */
+            width: 60%;
+            height: 100%;
+            font-size: 60px;
+
+            /* Alignment */
+            position: relative;
+            text-align: center;
+            margin-top: 12%;
+
+            }
+
+            .individualButton {
+
+            /* Sizing */
+            border-radius: 43px;
+            width: 40%;
+            height: 25%;
+            font-size: 45px;
+
+            /* Alignment */
+            position: absolute;
+            text-align: center;
+            margin-left: 3%;
+            margin-top: 5%;
+
+        }
+
+            .groupButton {
+
+            /* Sizing */
+            border-radius: 43px;
+            width: 40%;
+            height: 25%;
+            font-size: 45px;
+
+            /* Alignment */
+            position: absolute;
+            text-align: center;
+            margin-right: 3%;
+            margin-top: 5%;
+
+        }
+
+            .interactImage {
+
+            /* Sizing */
+            width: 30%;
+            height: 10%;
+
+            /* Alignment */
+            position: absolute;
+            margin-bottom: 3%;
+            margin-right: 1%;
+
+        }
+
+}
+
+/*  large screens format */
+@media (max-width: 1441px) {
+
+            .header {
+            /* Sizing */
+
+            font-size: 70px;
+            }
+
+           .subheader {
+
+            /* Sizing */
+            width: 60%;
+            height: 100%;
+            font-size: 50px;
+
+            /* Alignment */
+            position: relative;
+            text-align: center;
+            margin-top: 15%;
+
+            }
+
+            .individualButton {
+
+            /* Sizing */
+            border-radius: 43px;
+            width: 40%;
+            height: 25%;
+            font-size: 45px;
+
+            /* Alignment */
+            position: absolute;
+            text-align: center;
+            margin-left: 3%;
+            margin-top: 5%;
+
+        }
+
+            .groupButton {
+
+            /* Sizing */
+            border-radius: 43px;
+            width: 40%;
+            height: 25%;
+            font-size: 45px;
+
+            /* Alignment */
+            position: absolute;
+            text-align: center;
+            margin-right: 3%;
+            margin-top: 5%;
+
+        }
+
+            .interactImage {
+
+            /* Sizing */
+            width: 30%;
+            height: 10%;
+
+            /* Alignment */
+            position: absolute;
+            margin-bottom: 3%;
+            margin-right: 1%;
+
+        }
+
+}
+
+/*  big landscape tablets, laptops, and desktops format */
+@media (max-width: 1281px) {
+
+            .header {
+            /* Sizing */
+
+            font-size: 70px;
+            }
+
+           .subheader {
+
+            /* Sizing */
+            width: 60%;
+            height: 100%;
+            font-size: 40px;
+
+            /* Alignment */
+            position: relative;
+            text-align: center;
+            margin-top: 16%;
+
+            }
+
+            .individualButton {
+
+            /* Sizing */
+            border-radius: 43px;
+            width: 40%;
+            height: 25%;
+            font-size: 45px;
+
+            /* Alignment */
+            position: absolute;
+            text-align: center;
+            margin-left: 3%;
+            margin-top: 5%;
+
+        }
+
+            .groupButton {
+
+            /* Sizing */
+            border-radius: 43px;
+            width: 40%;
+            height: 25%;
+            font-size: 45px;
+
+            /* Alignment */
+            position: absolute;
+            text-align: center;
+            margin-right: 3%;
+            margin-top: 5%;
+
+        }
+
+            .interactImage {
+
+            /* Sizing */
+            width: 30%;
+            height: 10%;
+
+            /* Alignment */
+            position: absolute;
+            margin-bottom: 3%;
+            margin-right: 1%;
+
+        }
+
+}
+
+/* Tablet, iPads, Res Laptops and Desktops Format */
+@media (max-width: 1025px) {
+
+           .subheader {
+
+            /* Sizing */
+            width: 75%;
+            height: 100%;
+            font-size: 30px;
+
+            /* Alignment */
+            position: relative;
+            text-align: center;
+            margin-top: 30%;
+
+            }
+
+            .individualButton {
+
+            /* Sizing */
+            border-radius: 43px;
+            width: 40%;
+            height: 25%;
+            font-size: 45px;
+
+            /* Alignment */
+            position: absolute;
+            text-align: center;
+            margin-left: 3%;
+
+        }
+
+            .groupButton {
+
+            /* Sizing */
+            border-radius: 43px;
+            width: 40%;
+            height: 25%;
+            font-size: 45px;
+
+            /* Alignment */
+            position: absolute;
+            text-align: center;
+            margin-right: 3%;
+
+        }
+
+            .interactImage {
+
+            /* Sizing */
+            width: 70%;
+            height: 10%;
+
+            /* Alignment */
+            position: absolute;
+            margin-bottom: 3%;
+            margin-right: 1%;
+
+        }
+
+}
+
+/* tablet, landscape iPad, lo-res laptops ands desktops Format */
+@media (max-width: 800px) {
+
+           .subheader {
+
+            /* Sizing */
+            width: 60%;
+            height: 100%;
+            font-size: 30px;
+
+            /* Alignment */
+            position: relative;
+            text-align: center;
+            margin-top: 38%;
+
+            }
+
+            .individualButton {
+
+            /* Sizing */
+            border-radius: 43px;
+            width: 40%;
+            height: 25%;
+            font-size: 40px;
+
+            /* Alignment */
+            position: absolute;
+            text-align: center;
+            margin-left: 3%;
+
+        }
+
+            .groupButton {
+
+            /* Sizing */
+            border-radius: 43px;
+            width: 40%;
+            height: 25%;
+            font-size: 40px;
+
+            /* Alignment */
+            position: absolute;
+            text-align: center;
+            margin-right: 3%;
+
+        }
+
+            .interactImage {
+
+            /* Sizing */
+            width: 70%;
+            height: 10%;
+
+            /* Alignment */
+            position: absolute;
+            margin-bottom: 3%;
+            margin-right: 1%;
+
+        }
+
+}
+
+/* Other iPads */
+@media only screen and (max-width: 768px) {
+
+    .header {
+        /* Sizing */
+        width: 90%;
+        font-size: 60px;
+    }
+           .subheader {
+
+            /* Sizing */
+            width: 75%;
+            height: 100%;
+            font-size: 40px;
+
+            /* Alignment */
+            position: relative;
+            text-align: center;
+            margin-top: 35%;
+
+            }
+
+            .individualButton {
+
+            /* Sizing */
+            border-radius: 43px;
+            width: 40%;
+            height: 25%;
+            font-size: 40px;
+
+            /* Alignment */
+            position: absolute;
+            text-align: center;
+            margin-left: 3%;
+
+        }
+
+            .groupButton {
+
+            /* Sizing */
+            border-radius: 43px;
+            width: 40%;
+            height: 25%;
+            font-size: 40px;
+
+            /* Alignment */
+            position: absolute;
+            text-align: center;
+            margin-right: 3%;
+
+        }
+
+            .interactImage {
+
+            /* Sizing */
+            width: 70%;
+            height: 10%;
+
+            /* Alignment */
+            position: absolute;
+            margin-bottom: 3%;
+            margin-right: 1%;
+
+        }
+
+}
+
+/* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) Format */
+@media only screen and (max-width: 600px) {
+
+            .header {
+            /* Sizing */
+            width: 95%;
+            font-size: 60px;
+            }
+
+           .subheader {
+
+            /* Sizing */
+            width: 75%;
+            height: 100%;
+            font-size: 30px;
+
+            /* Alignment */
+            position: relative;
+            text-align: center;
+            margin-top: 35%;
+
+            }
+
+            .individualButton {
+
+            /* Sizing */
+            border-radius: 43px;
+            width: 40%;
+            height: 25%;
+            font-size: 20px;
+
+            /* Alignment */
+            position: absolute;
+            text-align: center;
+            margin-left: 3%;
+
+        }
+
+            .groupButton {
+
+            /* Sizing */
+            border-radius: 43px;
+            width: 40%;
+            height: 25%;
+            font-size: 20px;
+
+            /* Alignment */
+            position: absolute;
+            text-align: center;
+            margin-right: 3%;
+
+        }
+
+            .interactImage {
+
+            /* Sizing */
+            width: 70%;
+            height: 10%;
+
+            /* Alignment */
+            position: absolute;
+            margin-bottom: 3%;
+            margin-right: 1%;
+
+        }
+
+}
+
+
+/* smartphones, Android phones, landscape iPhone Format */
+@media only screen and (max-width: 480px) {
         .header {
 
             /* Sizing */
@@ -137,46 +606,68 @@ body {
 
         }
 
-    .individualButton {
-        /* Sizing */
-    border-radius: 43px;
-    width: 40%;
-    height: 25%;
-    font-size: 20px;
+        .individualButton {
 
-    /* Alignment */
-    position: absolute;
-    text-align: center;
-    margin-left: 3%;
+            /* Sizing */
+            border-radius: 43px;
+            width: 40%;
+            height: 25%;
+            font-size: 20px;
 
-    }
+            /* Alignment */
+            position: absolute;
+            text-align: center;
+            margin-left: 3%;
 
-        .groupButton {
-    /* Sizing */
-    border-radius: 43px;
-    width: 40%;
-    height: 25%;
-    font-size: 20px;
+        }
 
-    /* Alignment */
-    position: absolute;
-    text-align: center;
-    margin-right: 3%;
+            .groupButton {
 
-    }
-    .interactImage {
+            /* Sizing */
+            border-radius: 43px;
+            width: 40%;
+            height: 25%;
+            font-size: 20px;
 
-    /* Sizing */
-    width: 70%;
-    height: 10%;
+            /* Alignment */
+            position: absolute;
+            text-align: center;
+            margin-right: 3%;
 
-    /* Alignment */
-    position: absolute;
-    margin-bottom: 20%;
-    margin-right: 1%;
+        }
 
-    }
+        .interactImage {
 
+            /* Sizing */
+            width: 70%;
+            height: 10%;
+
+            /* Alignment */
+            position: absolute;
+            margin-bottom: 3%;
+            margin-right: 1%;
+
+        }
+
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) Format */
+
+@media only screen and (max-width: 320px) {
+        .header {
+
+            /* Sizing */
+            font-size: 30px;
+            width: 95%;
+
+        }
+
+        .subheader {
+
+            /* Sizing */
+            font-size: 15px;
+        }
+
+
+}
 
 
 }
