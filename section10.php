@@ -282,7 +282,21 @@ session_start();
         $to .= 'mdodell@brandeis.edu';
 
         // Subject
-        $subject = 'IDC Email Test ' . date('Y/m/d H:i:s');
+        $subject = 'IDC Confirmation: ';
+
+        if($_SESSION['section3Email']){
+          $subject.= 'Individual - ' . $_SESSION['section3Name'];
+        }
+        else if($_SESSION['section4Email']){
+          $subject.= 'Individual - ' . $_SESSION['section4Name'];
+        }
+        else if($_SESSION['section5Email']){
+          $subject.= 'Individual - ' . $_SESSION['section5Name'];
+        }
+        else{
+          $subject.= 'Group - ' . $_SESSION['section6GroupName'];
+        }
+        $subject.= " [". date('Y/m/d H:i:s') . "]";
 
         // Message
         $body = '<html lang="en"> <head>  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
