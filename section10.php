@@ -180,7 +180,7 @@ session_start();
         ?>
         <!-- File creation -->
         <?php
-        include "simple_html_dom.php";
+        require_once('vendor/autoload.php'); 
         $excelData = '';
         if($_SESSION['section3Name']){
           $excelData = $excelData . '<table> <thead> <tr> <th>Name:</th> <th>Interact Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Grade:</th> <th>Diet:</th> </tr> </thead> <tbody>';
@@ -279,28 +279,6 @@ session_start();
           $excelFileName = 'Group - ' . $_SESSION['section6GroupName'];
         }
         $excelFileName = $excelFileName . '.csv';
-        $html = str_get_html($excelData);
-        $fp = fopen($excelFileName, "w");
-
-        foreach($html->find('tr') as $element)
-        {
-          $td = array();
-          foreach( $element->find('th') as $row)
-          {
-            $td [] = $row->plaintext;
-          }
-          fputcsv($fp, $td);
-
-          $td = array();
-          foreach( $element->find('td') as $row)
-          {
-            $td [] = $row->plaintext;
-          }
-          fputcsv($fp, $td);
-        }
-
-
-        fclose($fp);
         // file_put_contents($excelFileName, $fp);
         ?>
 
