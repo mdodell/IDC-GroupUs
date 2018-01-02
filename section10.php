@@ -181,90 +181,151 @@ session_start();
         <!-- File creation -->
         <?php
         require_once('vendor/autoload.php');
+        use PhpOffice\PhpSpreadsheet\Spreadsheet;
+        use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $rowNum = 1;
+
+        //Data input
         $excelData = '';
         if($_SESSION['section3Name']){
-          $excelData = $excelData . '<table> <thead> <tr> <th>Name:</th> <th>Interact Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Grade:</th> <th>Diet:</th> </tr> </thead> <tbody>';
-          $excelData = $excelData . "<tr><td>" .  $_SESSION['section3Name'] . "</td>".
-          "<td>" . $_SESSION['section3ClubName'] . "</td>".
-          "<td>" . $_SESSION['section3Email'] . "</td>".
-          "<td>" . $_SESSION['section3Phone'] . "</td>".
-          "<td>" . ($_SESSION['section3OtherGender'] ? $_SESSION['section3OtherGender'] : $_SESSION['section3Gender']) . "</td>".
-          "<td>" . $_SESSION['section3Grade'] . "</td>".
-          "<td>" . ($_SESSION['section3OtherDiet'] ? $_SESSION['section3OtherDiet'] : $_SESSION['section3Diet']) . "</td></tr>";
-
-          $excelData = $excelData . '</tbody></table><br>';
+          $sheet->setCellValue('A' . $rowNum, 'Name:');
+          $sheet->setCellValue('B' . $rowNum, 'Interact Club Name:');
+          $sheet->setCellValue('C' . $rowNum, 'Email:');
+          $sheet->setCellValue('D' . $rowNum, 'Phone Number:');
+          $sheet->setCellValue('E' . $rowNum, 'Gender:');
+          $sheet->setCellValue('F' . $rowNum, 'Grade:');
+          $sheet->setCellValue('G' . $rowNum, 'Diet:');
+          $rowNum++;
+          $sheet->setCellValue('A' . $rowNum, $_SESSION['section3Name']);
+          $sheet->setCellValue('B' . $rowNum, $_SESSION['section3ClubName']);
+          $sheet->setCellValue('C' . $rowNum, $_SESSION['section3Email']);
+          $sheet->setCellValue('D' . $rowNum, $_SESSION['section3Phone']);
+          $sheet->setCellValue('E' . $rowNum, ($_SESSION['section3OtherGender'] ? $_SESSION['section3OtherGender'] : $_SESSION['section3Gender']));
+          $sheet->setCellValue('F' . $rowNum, $_SESSION['section3Grade']);
+          $sheet->setCellValue('G' . $rowNum, ($_SESSION['section3OtherDiet'] ? $_SESSION['section3OtherDiet'] : $_SESSION['section3Diet']));
+          $rowNum++;
+          $rowNum++; //Extra row for space
         }
         if($_SESSION['section4Name']){
-          $excelData = $excelData . '<table> <thead> <tr> <th>Name:</th> <th>Rotaract Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Age:</th> <th>Diet:</th> </tr> </thead> <tbody>';
-          $excelData = $excelData . "<tr><td>" .  $_SESSION['section4Name'] . "</td>".
-          "<td>" . $_SESSION['section4ClubName'] . "</td>".
-          "<td>" . $_SESSION['section4Email'] . "</td>".
-          "<td>" . $_SESSION['section4Phone'] . "</td>".
-          "<td>" . ($_SESSION['section4OtherGender'] ? $_SESSION['section4OtherGender'] : $_SESSION['section4Gender']) . "</td>".
-          "<td>" . $_SESSION['section4Age'] . "</td>".
-          "<td>" . ($_SESSION['section4OtherDiet'] ? $_SESSION['section4OtherDiet'] : $_SESSION['section4Diet']) . "</td></tr>";
-
-          $excelData = $excelData . '</tbody></table><br>';
+          $sheet->setCellValue('A' . $rowNum, 'Name:');
+          $sheet->setCellValue('B' . $rowNum, 'Rotaract Name:');
+          $sheet->setCellValue('C' . $rowNum, 'Email:');
+          $sheet->setCellValue('D' . $rowNum, 'Phone Number:');
+          $sheet->setCellValue('E' . $rowNum, 'Gender:');
+          $sheet->setCellValue('F' . $rowNum, 'Age:');
+          $sheet->setCellValue('G' . $rowNum, 'Diet:');
+          $rowNum++;
+          $sheet->setCellValue('A' . $rowNum, $_SESSION['section4Name']);
+          $sheet->setCellValue('B' . $rowNum, $_SESSION['section4ClubName']);
+          $sheet->setCellValue('C' . $rowNum, $_SESSION['section4Email']);
+          $sheet->setCellValue('D' . $rowNum, $_SESSION['section4Phone']);
+          $sheet->setCellValue('E' . $rowNum, ($_SESSION['section4OtherGender'] ? $_SESSION['section4OtherGender'] : $_SESSION['section4Gender']));
+          $sheet->setCellValue('F' . $rowNum,  $_SESSION['section4Age']);
+          $sheet->setCellValue('G' . $rowNum, ($_SESSION['section4OtherDiet'] ? $_SESSION['section4OtherDiet'] : $_SESSION['section4Diet']));
+          $rowNum++;
+          $rowNum++; //Extra row for space
         }
         if($_SESSION['section5Name']){
-          $excelData = $excelData . '<table> <thead> <tr> <th>Name:</th> <th>Rotary Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Advisor Type:</th> <th>Diet:</th> </tr> </thead> <tbody>';
-          $excelData = $excelData . "<tr><td>" .  $_SESSION['section5Name'] . "</td>".
-          "<td>" . $_SESSION['section5ClubName'] . "</td>".
-          "<td>" . $_SESSION['section5Email'] . "</td>".
-          "<td>" . $_SESSION['section5Phone'] . "</td>".
-          "<td>" . ($_SESSION['section5OtherGender'] ? $_SESSION['section5OtherGender'] : $_SESSION['section5Gender']) . "</td>".
-          "<td>" . $_SESSION['section5AdvisorType'] . "</td>".
-          "<td>" . ($_SESSION['section5OtherDiet'] ? $_SESSION['section5OtherDiet'] : $_SESSION['section5Diet']) . "</td></tr>";
-
-          $excelData = $excelData . '</tbody></table><br>';
+          $sheet->setCellValue('A' . $rowNum, 'Name:');
+          $sheet->setCellValue('B' . $rowNum, 'Rotary Club Name:');
+          $sheet->setCellValue('C' . $rowNum, 'Email:');
+          $sheet->setCellValue('D' . $rowNum, 'Phone Number:');
+          $sheet->setCellValue('E' . $rowNum, 'Gender:');
+          $sheet->setCellValue('F' . $rowNum, 'Advisor Type:');
+          $sheet->setCellValue('G' . $rowNum, 'Diet:');
+          $rowNum++;
+          $sheet->setCellValue('A' . $rowNum, $_SESSION['section5Name']);
+          $sheet->setCellValue('B' . $rowNum, $_SESSION['section5ClubName']);
+          $sheet->setCellValue('C' . $rowNum, $_SESSION['section5Email']);
+          $sheet->setCellValue('D' . $rowNum, $_SESSION['section5Phone']);
+          $sheet->setCellValue('E' . $rowNum, ($_SESSION['section5OtherGender'] ? $_SESSION['section5OtherGender'] : $_SESSION['section5Gender']));
+          $sheet->setCellValue('F' . $rowNum,  $_SESSION['section5AdvisorType']);
+          $sheet->setCellValue('G' . $rowNum, ($_SESSION['section5OtherDiet'] ? $_SESSION['section5OtherDiet'] : $_SESSION['section5Diet']));
+          $rowNum++;
+          $rowNum++; //Extra row for space
         }
         if($_SESSION['section6GroupName']){
-          $excelData = $excelData . '<table> <thead> <tr> <th>Group Name:</th> <th>Primary Contact Name:</th> <th>Primary Contact Email:</th> <th>Primary Contact Phone Number:</th> </tr> </thead> <tbody>';
-          $excelData = $excelData . "<tr><td>" .  $_SESSION['section6GroupName'] . "</td>".
-          "<td>" . $_SESSION['section6ContactName'] . "</td>".
-          "<td>" . $_SESSION['section6ContactEmail'] . "</td>".
-          "<td>" . $_SESSION['section6ContactPhone'] . "</td></tr>";
-
-          $excelData = $excelData . '</tbody></table><br>';
+          $sheet->setCellValue('A' . $rowNum, 'Group Name:');
+          $sheet->setCellValue('B' . $rowNum, 'Primary Contact Name:');
+          $sheet->setCellValue('C' . $rowNum, 'Primary Contact Email:');
+          $sheet->setCellValue('D' . $rowNum, 'Primary Contact Phone Number:');
+          $rowNum++;
+          $sheet->setCellValue('A' . $rowNum, $_SESSION['section6GroupName']);
+          $sheet->setCellValue('B' . $rowNum, $_SESSION['section6ContactName']);
+          $sheet->setCellValue('C' . $rowNum, $_SESSION['section6ContactEmail']);
+          $sheet->setCellValue('D' . $rowNum, $_SESSION['section6ContactPhone']);
+          $rowNum++;
+          $rowNum++; //Extra row for space
         }
         if($_SESSION['section7Names']){
-          $excelData = $excelData . '<table> <thead> <tr> <th>Name:</th> <th>Advisor Type:</th> <th>Gender:</th> <th>Club Name:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
+          $sheet->setCellValue('A' . $rowNum, 'Name:');
+          $sheet->setCellValue('B' . $rowNum, 'Advsior Type:');
+          $sheet->setCellValue('C' . $rowNum, 'Gender:');
+          $sheet->setCellValue('D' . $rowNum, 'Club Name:');
+          $sheet->setCellValue('E' . $rowNum, 'Email:');
+          $sheet->setCellValue('F' . $rowNum, 'Phone:');
+          $sheet->setCellValue('G' . $rowNum, 'Diet:');
+          $rowNum++;
           for($i=0; $i<count($_SESSION['section7Names']); $i++){
-            $excelData = $excelData . "<tr><td>" .  $_SESSION['section7Names'][$i] . "</td>".
-            "<td>" . $_SESSION['section7AdvisorTypes'][$i] . "</td>".
-            "<td>" . ($_SESSION['section7OtherGenders'][$i] ? $_SESSION['section7OtherGenders'][$i] : $_SESSION['section7Genders'][$i]) . "</td>".
-            "<td>" . $_SESSION['section7ClubNames'][$i] . "</td>".
-            "<td>" . $_SESSION['section7Emails'][$i] . "</td>".
-            "<td>" . $_SESSION['section7Phones'][$i] . "</td>".
-            "<td>" . ($_SESSION['section7OtherDiets'][$i] ? $_SESSION['section7OtherDiets'][$i] : $_SESSION['section7Diets'][$i]) . "</td></tr>";
+          $sheet->setCellValue('A' . $rowNum, $_SESSION['section7Names'][$i]);
+          $sheet->setCellValue('B' . $rowNum, $_SESSION['section7AdvisorTypes'][$i]);
+          $sheet->setCellValue('C' . $rowNum, ($_SESSION['section7OtherGenders'][$i] ? $_SESSION['section7OtherGenders'][$i] : $_SESSION['section7Genders'][$i]));
+          $sheet->setCellValue('D' . $rowNum, $_SESSION['section7ClubNames'][$i]);
+          $sheet->setCellValue('E' . $rowNum, $_SESSION['section7Emails'][$i]);
+          $sheet->setCellValue('F' . $rowNum,  $_SESSION['section7Phones'][$i]);
+          $sheet->setCellValue('G' . $rowNum, ($_SESSION['section7OtherDiets'][$i] ? $_SESSION['section7OtherDiets'][$i] : $_SESSION['section7Diets'][$i]));
+          $rowNum++;
           }
-          $excelData = $excelData . '</tbody></table><br>';
+          $rowNum++; //Extra row for space
         }
         if($_SESSION['section8Names']){
-          $excelData = $excelData . '<table> <thead> <tr> <th>Name:</th> <th>Grade:</th> <th>Gender:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
+          $sheet->setCellValue('A' . $rowNum, 'Name:');
+          $sheet->setCellValue('B' . $rowNum, 'Grade:');
+          $sheet->setCellValue('C' . $rowNum, 'Gender:');
+          $sheet->setCellValue('D' . $rowNum, 'Email:');
+          $sheet->setCellValue('E' . $rowNum, 'Phone:');
+          $sheet->setCellValue('F' . $rowNum, 'Diet:');
+          $rowNum++;
           for($i=0; $i<count($_SESSION['section8Names']); $i++){
-            $excelData = $excelData . "<tr><td>" .  $_SESSION['section8Names'][$i] . "</td>".
-            "<td>" . $_SESSION['section8Grades'][$i] . "</td>".
-            "<td>" . ($_SESSION['section8OtherGenders'][$i] ? $_SESSION['section8OtherGenders'][$i] : $_SESSION['section8Genders'][$i]) . "</td>".
-            "<td>" . $_SESSION['section8Emails'][$i] . "</td>".
-            "<td>" . $_SESSION['section8Phones'][$i] . "</td>".
-            "<td>" . ($_SESSION['section8OtherDiets'][$i] ? $_SESSION['section8OtherDiets'][$i] : $_SESSION['section8Diets'][$i]) . "</td></tr>";
+          $sheet->setCellValue('A' . $rowNum, $_SESSION['section8Names'][$i]);
+          $sheet->setCellValue('B' . $rowNum, $_SESSION['section8Grades'][$i]);
+          $sheet->setCellValue('C' . $rowNum, ($_SESSION['section8OtherGenders'][$i] ? $_SESSION['section8OtherGenders'][$i] : $_SESSION['section8Genders'][$i]));
+          $sheet->setCellValue('D' . $rowNum, $_SESSION['section8Emails'][$i]);
+          $sheet->setCellValue('E' . $rowNum, $_SESSION['section8Phones'][$i]);
+          $sheet->setCellValue('F' . $rowNum, ($_SESSION['section8OtherDiets'][$i] ? $_SESSION['section8OtherDiets'][$i] : $_SESSION['section8Diets'][$i]));
+          $rowNum++;
           }
-          $excelData = $excelData . '</tbody></table><br>';
+          $rowNum++; //Extra row for space
         }
         if($_SESSION['section9Names']){
-          $excelData = $excelData . '<table> <thead> <tr> <th>Name:</th> <th>Age:</th> <th>Gender:</th> <th>Club Name:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
+
+          $sheet->setCellValue('A' . $rowNum, 'Name:');
+          $sheet->setCellValue('B' . $rowNum, 'Age:');
+          $sheet->setCellValue('C' . $rowNum, 'Gender:');
+          $sheet->setCellValue('D' . $rowNum, 'Club Name:');
+          $sheet->setCellValue('E' . $rowNum, 'Email:');
+          $sheet->setCellValue('F' . $rowNum, 'Phone:');
+          $sheet->setCellValue('G' . $rowNum, 'Diet:');
+
+          $rowNum++;
           for($i=0; $i<count($_SESSION['section9Names']); $i++){
-            $excelData = $excelData . "<tr><td>" .  $_SESSION['section9Names'][$i] . "</td>".
-            "<td>" . $_SESSION['section9Ages'][$i] . "</td>".
-            "<td>" . ($_SESSION['section9OtherGenders'][$i] ? $_SESSION['section9OtherGenders'][$i] : $_SESSION['section9Genders'][$i]) . "</td>".
-            "<td>" . $_SESSION['section9ClubNames'][$i] . "</td>".
-            "<td>" . $_SESSION['section9Emails'][$i] . "</td>".
-            "<td>" . $_SESSION['section9Phones'][$i] . "</td>".
-            "<td>" . ($_SESSION['section9OtherDiets'][$i] ? $_SESSION['section9OtherDiets'][$i] : $_SESSION['section9Diets'][$i]) . "</td></tr>";
+          $sheet->setCellValue('A' . $rowNum, $_SESSION['section9Names'][$i]);
+          $sheet->setCellValue('B' . $rowNum, $_SESSION['section9Ages'][$i]);
+          $sheet->setCellValue('C' . $rowNum, ($_SESSION['section9OtherGenders'][$i] ? $_SESSION['section9OtherGenders'][$i] : $_SESSION['section9Genders'][$i]));
+          $sheet->setCellValue('D' . $rowNum, $_SESSION['section9ClubNames'][$i]);
+          $sheet->setCellValue('E' . $rowNum, $_SESSION['section9Emails'][$i]);
+          $sheet->setCellValue('F' . $rowNum, $_SESSION['section9Phones'][$i]);
+          $sheet->setCellValue('G' . $rowNum, ($_SESSION['section9OtherDiets'][$i] ? $_SESSION['section9OtherDiets'][$i] : $_SESSION['section9Diets'][$i]));
+          $rowNum++;
           }
-          $excelData = $excelData . '</tbody></table><br>';
+          $rowNum++; //Extra row for space
         }
+
+        //File naming
         $excelFileName = 'test';
         if($_SESSION['section3Email']){
           $excelFileName = 'Individual - ' . $_SESSION['section3Name'];
@@ -278,8 +339,12 @@ session_start();
         else{
           $excelFileName = 'Group - ' . $_SESSION['section6GroupName'];
         }
-        $excelFileName = $excelFileName . '.csv';
-        // file_put_contents($excelFileName, $fp);
+        $excelFileName = $excelFileName . '.xlsx';
+
+        //File writing
+        $writer = new Xlsx($spreadsheet);
+        $writer->save($excelFileName);
+
         ?>
 
         <?php
@@ -425,7 +490,7 @@ session_start();
         $message .= "Content-Transfer-Encoding: 8bit".$eol.$eol;
         $message .= $body.$eol;
         $message .= "--".$uid.$eol;
-        $message .= "Content-Type: application/ms-excel; name=\"".$filename."\"".$eol;
+        $message .= "Content-Type: 	application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; name=\"".$filename."\"".$eol;
         $message .= "Content-Transfer-Encoding: base64".$eol;
         $message .= "Content-Disposition: attachment; filename=\"".$filename."\"".$eol;
         $message .= $content.$eol;
