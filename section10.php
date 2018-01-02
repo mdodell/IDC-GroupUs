@@ -17,7 +17,7 @@ session_start();
 
   <!-- CSS assets -->
 
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
 
@@ -180,7 +180,7 @@ session_start();
         ?>
         <!-- File creation -->
         <?php
-        require_once('vendor/autoload.php'); 
+        require_once('vendor/autoload.php');
         $excelData = '';
         if($_SESSION['section3Name']){
           $excelData = $excelData . '<table> <thead> <tr> <th>Name:</th> <th>Interact Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Grade:</th> <th>Diet:</th> </tr> </thead> <tbody>';

@@ -50,7 +50,7 @@ if(isset($_POST['submit'])){
 
   <!-- CSS assets -->
 
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
 
