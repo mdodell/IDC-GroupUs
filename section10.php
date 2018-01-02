@@ -199,6 +199,13 @@ session_start();
           $sheet->setCellValue('E' . $rowNum, 'Gender:');
           $sheet->setCellValue('F' . $rowNum, 'Grade:');
           $sheet->setCellValue('G' . $rowNum, 'Diet:');
+          $sheet->getStyle('A' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('B' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('C' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('D' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('E' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('F' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('G' . $rowNum)->getFont()->setBold(true);
           $rowNum++;
           $sheet->setCellValue('A' . $rowNum, $_SESSION['section3Name']);
           $sheet->setCellValue('B' . $rowNum, $_SESSION['section3ClubName']);
@@ -218,6 +225,13 @@ session_start();
           $sheet->setCellValue('E' . $rowNum, 'Gender:');
           $sheet->setCellValue('F' . $rowNum, 'Age:');
           $sheet->setCellValue('G' . $rowNum, 'Diet:');
+          $sheet->getStyle('A' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('B' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('C' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('D' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('E' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('F' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('G' . $rowNum)->getFont()->setBold(true);
           $rowNum++;
           $sheet->setCellValue('A' . $rowNum, $_SESSION['section4Name']);
           $sheet->setCellValue('B' . $rowNum, $_SESSION['section4ClubName']);
@@ -237,6 +251,13 @@ session_start();
           $sheet->setCellValue('E' . $rowNum, 'Gender:');
           $sheet->setCellValue('F' . $rowNum, 'Advisor Type:');
           $sheet->setCellValue('G' . $rowNum, 'Diet:');
+          $sheet->getStyle('A' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('B' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('C' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('D' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('E' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('F' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('G' . $rowNum)->getFont()->setBold(true);
           $rowNum++;
           $sheet->setCellValue('A' . $rowNum, $_SESSION['section5Name']);
           $sheet->setCellValue('B' . $rowNum, $_SESSION['section5ClubName']);
@@ -253,6 +274,10 @@ session_start();
           $sheet->setCellValue('B' . $rowNum, 'Primary Contact Name:');
           $sheet->setCellValue('C' . $rowNum, 'Primary Contact Email:');
           $sheet->setCellValue('D' . $rowNum, 'Primary Contact Phone Number:');
+          $sheet->getStyle('A' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('B' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('C' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('D' . $rowNum)->getFont()->setBold(true);
           $rowNum++;
           $sheet->setCellValue('A' . $rowNum, $_SESSION['section6GroupName']);
           $sheet->setCellValue('B' . $rowNum, $_SESSION['section6ContactName']);
@@ -269,16 +294,23 @@ session_start();
           $sheet->setCellValue('E' . $rowNum, 'Email:');
           $sheet->setCellValue('F' . $rowNum, 'Phone:');
           $sheet->setCellValue('G' . $rowNum, 'Diet:');
+          $sheet->getStyle('A' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('B' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('C' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('D' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('E' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('F' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('G' . $rowNum)->getFont()->setBold(true);
           $rowNum++;
           for($i=0; $i<count($_SESSION['section7Names']); $i++){
-          $sheet->setCellValue('A' . $rowNum, $_SESSION['section7Names'][$i]);
-          $sheet->setCellValue('B' . $rowNum, $_SESSION['section7AdvisorTypes'][$i]);
-          $sheet->setCellValue('C' . $rowNum, ($_SESSION['section7OtherGenders'][$i] ? $_SESSION['section7OtherGenders'][$i] : $_SESSION['section7Genders'][$i]));
-          $sheet->setCellValue('D' . $rowNum, $_SESSION['section7ClubNames'][$i]);
-          $sheet->setCellValue('E' . $rowNum, $_SESSION['section7Emails'][$i]);
-          $sheet->setCellValue('F' . $rowNum,  $_SESSION['section7Phones'][$i]);
-          $sheet->setCellValue('G' . $rowNum, ($_SESSION['section7OtherDiets'][$i] ? $_SESSION['section7OtherDiets'][$i] : $_SESSION['section7Diets'][$i]));
-          $rowNum++;
+            $sheet->setCellValue('A' . $rowNum, $_SESSION['section7Names'][$i]);
+            $sheet->setCellValue('B' . $rowNum, $_SESSION['section7AdvisorTypes'][$i]);
+            $sheet->setCellValue('C' . $rowNum, ($_SESSION['section7OtherGenders'][$i] ? $_SESSION['section7OtherGenders'][$i] : $_SESSION['section7Genders'][$i]));
+            $sheet->setCellValue('D' . $rowNum, $_SESSION['section7ClubNames'][$i]);
+            $sheet->setCellValue('E' . $rowNum, $_SESSION['section7Emails'][$i]);
+            $sheet->setCellValue('F' . $rowNum,  $_SESSION['section7Phones'][$i]);
+            $sheet->setCellValue('G' . $rowNum, ($_SESSION['section7OtherDiets'][$i] ? $_SESSION['section7OtherDiets'][$i] : $_SESSION['section7Diets'][$i]));
+            $rowNum++;
           }
           $rowNum++; //Extra row for space
         }
@@ -289,20 +321,25 @@ session_start();
           $sheet->setCellValue('D' . $rowNum, 'Email:');
           $sheet->setCellValue('E' . $rowNum, 'Phone:');
           $sheet->setCellValue('F' . $rowNum, 'Diet:');
+          $sheet->getStyle('A' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('B' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('C' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('D' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('E' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('F' . $rowNum)->getFont()->setBold(true);
           $rowNum++;
           for($i=0; $i<count($_SESSION['section8Names']); $i++){
-          $sheet->setCellValue('A' . $rowNum, $_SESSION['section8Names'][$i]);
-          $sheet->setCellValue('B' . $rowNum, $_SESSION['section8Grades'][$i]);
-          $sheet->setCellValue('C' . $rowNum, ($_SESSION['section8OtherGenders'][$i] ? $_SESSION['section8OtherGenders'][$i] : $_SESSION['section8Genders'][$i]));
-          $sheet->setCellValue('D' . $rowNum, $_SESSION['section8Emails'][$i]);
-          $sheet->setCellValue('E' . $rowNum, $_SESSION['section8Phones'][$i]);
-          $sheet->setCellValue('F' . $rowNum, ($_SESSION['section8OtherDiets'][$i] ? $_SESSION['section8OtherDiets'][$i] : $_SESSION['section8Diets'][$i]));
-          $rowNum++;
+            $sheet->setCellValue('A' . $rowNum, $_SESSION['section8Names'][$i]);
+            $sheet->setCellValue('B' . $rowNum, $_SESSION['section8Grades'][$i]);
+            $sheet->setCellValue('C' . $rowNum, ($_SESSION['section8OtherGenders'][$i] ? $_SESSION['section8OtherGenders'][$i] : $_SESSION['section8Genders'][$i]));
+            $sheet->setCellValue('D' . $rowNum, $_SESSION['section8Emails'][$i]);
+            $sheet->setCellValue('E' . $rowNum, $_SESSION['section8Phones'][$i]);
+            $sheet->setCellValue('F' . $rowNum, ($_SESSION['section8OtherDiets'][$i] ? $_SESSION['section8OtherDiets'][$i] : $_SESSION['section8Diets'][$i]));
+            $rowNum++;
           }
           $rowNum++; //Extra row for space
         }
         if($_SESSION['section9Names']){
-
           $sheet->setCellValue('A' . $rowNum, 'Name:');
           $sheet->setCellValue('B' . $rowNum, 'Age:');
           $sheet->setCellValue('C' . $rowNum, 'Gender:');
@@ -310,17 +347,23 @@ session_start();
           $sheet->setCellValue('E' . $rowNum, 'Email:');
           $sheet->setCellValue('F' . $rowNum, 'Phone:');
           $sheet->setCellValue('G' . $rowNum, 'Diet:');
-
+          $sheet->getStyle('A' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('B' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('C' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('D' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('E' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('F' . $rowNum)->getFont()->setBold(true);
+          $sheet->getStyle('G' . $rowNum)->getFont()->setBold(true);
           $rowNum++;
           for($i=0; $i<count($_SESSION['section9Names']); $i++){
-          $sheet->setCellValue('A' . $rowNum, $_SESSION['section9Names'][$i]);
-          $sheet->setCellValue('B' . $rowNum, $_SESSION['section9Ages'][$i]);
-          $sheet->setCellValue('C' . $rowNum, ($_SESSION['section9OtherGenders'][$i] ? $_SESSION['section9OtherGenders'][$i] : $_SESSION['section9Genders'][$i]));
-          $sheet->setCellValue('D' . $rowNum, $_SESSION['section9ClubNames'][$i]);
-          $sheet->setCellValue('E' . $rowNum, $_SESSION['section9Emails'][$i]);
-          $sheet->setCellValue('F' . $rowNum, $_SESSION['section9Phones'][$i]);
-          $sheet->setCellValue('G' . $rowNum, ($_SESSION['section9OtherDiets'][$i] ? $_SESSION['section9OtherDiets'][$i] : $_SESSION['section9Diets'][$i]));
-          $rowNum++;
+            $sheet->setCellValue('A' . $rowNum, $_SESSION['section9Names'][$i]);
+            $sheet->setCellValue('B' . $rowNum, $_SESSION['section9Ages'][$i]);
+            $sheet->setCellValue('C' . $rowNum, ($_SESSION['section9OtherGenders'][$i] ? $_SESSION['section9OtherGenders'][$i] : $_SESSION['section9Genders'][$i]));
+            $sheet->setCellValue('D' . $rowNum, $_SESSION['section9ClubNames'][$i]);
+            $sheet->setCellValue('E' . $rowNum, $_SESSION['section9Emails'][$i]);
+            $sheet->setCellValue('F' . $rowNum, $_SESSION['section9Phones'][$i]);
+            $sheet->setCellValue('G' . $rowNum, ($_SESSION['section9OtherDiets'][$i] ? $_SESSION['section9OtherDiets'][$i] : $_SESSION['section9Diets'][$i]));
+            $rowNum++;
           }
           $rowNum++; //Extra row for space
         }
@@ -348,162 +391,163 @@ session_start();
         ?>
 
         <?php
-        $to  = 'adamfleishaker@gmail.com' . ', '; // Comma for multiple recepients
-        $to .= 'mdodell@brandeis.edu';
 
-        // Subject
-        $subject = 'IDC Confirmation: ';
+        use PHPMailer\PHPMailer\PHPMailer;
+        use PHPMailer\PHPMailer\Exception;
 
-        if($_SESSION['section3Email']){
-          $subject.= 'Individual - ' . $_SESSION['section3Name'];
-        }
-        else if($_SESSION['section4Email']){
-          $subject.= 'Individual - ' . $_SESSION['section4Name'];
-        }
-        else if($_SESSION['section5Email']){
-          $subject.= 'Individual - ' . $_SESSION['section5Name'];
-        }
-        else{
-          $subject.= 'Group - ' . $_SESSION['section6GroupName'];
-        }
-        $subject.= " [". date('Y/m/d H:i:s') . "]";
+        require './PHPMailer-6.0.2/src/Exception.php';
+        require './PHPMailer-6.0.2/src/PHPMailer.php';
+        require './PHPMailer-6.0.2/src/SMTP.php';
 
-        // Message
-        $body = '<html lang="en"> <head>  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        </head> <body> <h2>Interact District Conference 2018 Registration Confirmation</h2> <br>';
+        $mail = new PHPMailer(true);
+        try {
 
-        if($_SESSION['section3Name']){
-          $body = $body . '<h4>Registered Individual Interactor:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Interact Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Grade:</th> <th>Diet:</th> </tr> </thead> <tbody>';
-          $body = $body . "<tr><td>" .  $_SESSION['section3Name'] . "</td>".
-          "<td>" . $_SESSION['section3ClubName'] . "</td>".
-          "<td>" . $_SESSION['section3Email'] . "</td>".
-          "<td>" . $_SESSION['section3Phone'] . "</td>".
-          "<td>" . ($_SESSION['section3OtherGender'] ? $_SESSION['section3OtherGender'] : $_SESSION['section3Gender']) . "</td>".
-          "<td>" . $_SESSION['section3Grade'] . "</td>".
-          "<td>" . ($_SESSION['section3OtherDiet'] ? $_SESSION['section3OtherDiet'] : $_SESSION['section3Diet']) . "</td></tr>";
+          //Recipients
+          $mail->setFrom('adam@adamfly.me'); //Change out when hosted externally
+          $mail->addAddress('adamfleishaker@gmail.com');
+          $mail->addAddress('mdodell@brandeis.edu');
 
-          $body = $body . '</tbody></table><br>';
-        }
-        if($_SESSION['section4Name']){
-          $body = $body . '<h4>Registered Individual Rotaractor:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Rotaract Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Age:</th> <th>Diet:</th> </tr> </thead> <tbody>';
-          $body = $body . "<tr><td>" .  $_SESSION['section4Name'] . "</td>".
-          "<td>" . $_SESSION['section4ClubName'] . "</td>".
-          "<td>" . $_SESSION['section4Email'] . "</td>".
-          "<td>" . $_SESSION['section4Phone'] . "</td>".
-          "<td>" . ($_SESSION['section4OtherGender'] ? $_SESSION['section4OtherGender'] : $_SESSION['section4Gender']) . "</td>".
-          "<td>" . $_SESSION['section4Age'] . "</td>".
-          "<td>" . ($_SESSION['section4OtherDiet'] ? $_SESSION['section4OtherDiet'] : $_SESSION['section4Diet']) . "</td></tr>";
+          //Attachments
+          $mail->addAttachment($excelFileName); // Add attachments
 
-          $body = $body . '</tbody></table><br>';
-        }
-        if($_SESSION['section5Name']){
-          $body = $body . '<h4>Registered Individual Rotarian:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Rotary Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Advisor Type:</th> <th>Diet:</th> </tr> </thead> <tbody>';
-          $body = $body . "<tr><td>" .  $_SESSION['section5Name'] . "</td>".
-          "<td>" . $_SESSION['section5ClubName'] . "</td>".
-          "<td>" . $_SESSION['section5Email'] . "</td>".
-          "<td>" . $_SESSION['section5Phone'] . "</td>".
-          "<td>" . ($_SESSION['section5OtherGender'] ? $_SESSION['section5OtherGender'] : $_SESSION['section5Gender']) . "</td>".
-          "<td>" . $_SESSION['section5AdvisorType'] . "</td>".
-          "<td>" . ($_SESSION['section5OtherDiet'] ? $_SESSION['section5OtherDiet'] : $_SESSION['section5Diet']) . "</td></tr>";
+          //Content
+          $mail->isHTML(true); // Set email format to HTML
+          $mail->AltBody = 'Confirmation email. Please view this in an HTML-enabled browser.';
 
-          $body = $body . '</tbody></table><br>';
-        }
-        if($_SESSION['section6GroupName']){
-          $body = $body . '<h4>Registered Group Information:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Group Name:</th> <th>Primary Contact Name:</th> <th>Primary Contact Email:</th> <th>Primary Contact Phone Number:</th> </tr> </thead> <tbody>';
-          $body = $body . "<tr><td>" .  $_SESSION['section6GroupName'] . "</td>".
-          "<td>" . $_SESSION['section6ContactName'] . "</td>".
-          "<td>" . $_SESSION['section6ContactEmail'] . "</td>".
-          "<td>" . $_SESSION['section6ContactPhone'] . "</td></tr>";
+          // Subject
+          $subject = 'IDC Confirmation: ';
 
-          $body = $body . '</tbody></table><br>';
-        }
-        if($_SESSION['section7Names']){
-          $body = $body . '<h4>Registered Faculty/Rotarian Advisors:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Advisor Type:</th> <th>Gender:</th> <th>Club Name:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
-          for($i=0; $i<count($_SESSION['section7Names']); $i++){
-            $body = $body . "<tr><td>" .  $_SESSION['section7Names'][$i] . "</td>".
-            "<td>" . $_SESSION['section7AdvisorTypes'][$i] . "</td>".
-            "<td>" . ($_SESSION['section7OtherGenders'][$i] ? $_SESSION['section7OtherGenders'][$i] : $_SESSION['section7Genders'][$i]) . "</td>".
-            "<td>" . $_SESSION['section7ClubNames'][$i] . "</td>".
-            "<td>" . $_SESSION['section7Emails'][$i] . "</td>".
-            "<td>" . $_SESSION['section7Phones'][$i] . "</td>".
-            "<td>" . ($_SESSION['section7OtherDiets'][$i] ? $_SESSION['section7OtherDiets'][$i] : $_SESSION['section7Diets'][$i]) . "</td></tr>";
+          if($_SESSION['section3Email']){
+            $subject.= 'Individual - ' . $_SESSION['section3Name'];
           }
-          $body = $body . '</tbody></table><br>';
-        }
-        if($_SESSION['section8Names']){
-          $body = $body . '<h4>Registered Students:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Grade:</th> <th>Gender:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
-          for($i=0; $i<count($_SESSION['section8Names']); $i++){
-            $body = $body . "<tr><td>" .  $_SESSION['section8Names'][$i] . "</td>".
-            "<td>" . $_SESSION['section8Grades'][$i] . "</td>".
-            "<td>" . ($_SESSION['section8OtherGenders'][$i] ? $_SESSION['section8OtherGenders'][$i] : $_SESSION['section8Genders'][$i]) . "</td>".
-            "<td>" . $_SESSION['section8Emails'][$i] . "</td>".
-            "<td>" . $_SESSION['section8Phones'][$i] . "</td>".
-            "<td>" . ($_SESSION['section8OtherDiets'][$i] ? $_SESSION['section8OtherDiets'][$i] : $_SESSION['section8Diets'][$i]) . "</td></tr>";
+          else if($_SESSION['section4Email']){
+            $subject.= 'Individual - ' . $_SESSION['section4Name'];
           }
-          $body = $body . '</tbody></table><br>';
-        }
-        if($_SESSION['section9Names']){
-          $body = $body . '<h4>Registered Rotaractors:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Age:</th> <th>Gender:</th> <th>Club Name:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
-          for($i=0; $i<count($_SESSION['section9Names']); $i++){
-            $body = $body . "<tr><td>" .  $_SESSION['section9Names'][$i] . "</td>".
-            "<td>" . $_SESSION['section9Ages'][$i] . "</td>".
-            "<td>" . ($_SESSION['section9OtherGenders'][$i] ? $_SESSION['section9OtherGenders'][$i] : $_SESSION['section9Genders'][$i]) . "</td>".
-            "<td>" . $_SESSION['section9ClubNames'][$i] . "</td>".
-            "<td>" . $_SESSION['section9Emails'][$i] . "</td>".
-            "<td>" . $_SESSION['section9Phones'][$i] . "</td>".
-            "<td>" . ($_SESSION['section9OtherDiets'][$i] ? $_SESSION['section9OtherDiets'][$i] : $_SESSION['section9Diets'][$i]) . "</td></tr>";
+          else if($_SESSION['section5Email']){
+            $subject.= 'Individual - ' . $_SESSION['section5Name'];
           }
-          $body = $body . '</tbody></table><br></body></html>';
-        }
-        $filename = $excelFileName;
-        $file = $excelFileName;
-        $file_size = filesize($file);
-        $handle = fopen($file, "r");
-        $content = fread($handle, $file_size);
-        fclose($handle);
-
-        $content = chunk_split(base64_encode($content));
-        $uid = md5(uniqid(time()));
-        $name = basename($file);
-
-        $eol = PHP_EOL;
-        if($_SESSION['section3Email']){
-          $headers = 'Cc: ' . $_SESSION['section3Email'] .$eol;
-        }
-        else if($_SESSION['section4Email']){
-          $headers = 'Cc: ' . $_SESSION['section4Email'] .$eol;
-        }
-        else if($_SESSION['section5Email']){
-          $headers = 'Cc: ' . $_SESSION['section5Email'] .$eol;
-        }
-        else{
-          $headers = 'Cc: ' . $_SESSION['section6ContactEmail'] .$eol;
-        }
-        $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: multipart/mixed; boundary=\"".$uid."\"";
-        // Additional headers
+          else{
+            $subject.= 'Group - ' . $_SESSION['section6GroupName'];
+          }
+          $subject.= " [". date('Y/m/d H:i:s') . "]";
 
 
+          $mail->Subject = $subject;
 
-        $message = "--".$uid.$eol;
-        $message .= "Content-Type: text/html; charset=ISO-8859-1".$eol;
-        $message .= "Content-Transfer-Encoding: 8bit".$eol.$eol;
-        $message .= $body.$eol;
-        $message .= "--".$uid.$eol;
-        $message .= "Content-Type: 	application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; name=\"".$filename."\"".$eol;
-        $message .= "Content-Transfer-Encoding: base64".$eol;
-        $message .= "Content-Disposition: attachment; filename=\"".$filename."\"".$eol;
-        $message .= $content.$eol;
-        $message .= "--".$uid."--";
+          // Message
+          $body = '<html> <body> <h2>Interact District Conference 2018 Registration Confirmation</h2> <br>';
 
-        if (mail($to, $subject, $message, $headers))
-        {
-          echo "<script>document.getElementById('confirmStatus').innerHTML = \"<div class='alert alert-success'><strong>Success!</strong> Confirmation email sent!</div>\";</script>";
+          if($_SESSION['section3Name']){
+            $body = $body . '<h4>Registered Individual Interactor:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Interact Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Grade:</th> <th>Diet:</th> </tr> </thead> <tbody>';
+            $body = $body . "<tr><td>" .  $_SESSION['section3Name'] . "</td>".
+            "<td>" . $_SESSION['section3ClubName'] . "</td>".
+            "<td>" . $_SESSION['section3Email'] . "</td>".
+            "<td>" . $_SESSION['section3Phone'] . "</td>".
+            "<td>" . ($_SESSION['section3OtherGender'] ? $_SESSION['section3OtherGender'] : $_SESSION['section3Gender']) . "</td>".
+            "<td>" . $_SESSION['section3Grade'] . "</td>".
+            "<td>" . ($_SESSION['section3OtherDiet'] ? $_SESSION['section3OtherDiet'] : $_SESSION['section3Diet']) . "</td></tr>";
+
+            $body = $body . '</tbody></table><br>';
+          }
+          if($_SESSION['section4Name']){
+            $body = $body . '<h4>Registered Individual Rotaractor:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Rotaract Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Age:</th> <th>Diet:</th> </tr> </thead> <tbody>';
+            $body = $body . "<tr><td>" .  $_SESSION['section4Name'] . "</td>".
+            "<td>" . $_SESSION['section4ClubName'] . "</td>".
+            "<td>" . $_SESSION['section4Email'] . "</td>".
+            "<td>" . $_SESSION['section4Phone'] . "</td>".
+            "<td>" . ($_SESSION['section4OtherGender'] ? $_SESSION['section4OtherGender'] : $_SESSION['section4Gender']) . "</td>".
+            "<td>" . $_SESSION['section4Age'] . "</td>".
+            "<td>" . ($_SESSION['section4OtherDiet'] ? $_SESSION['section4OtherDiet'] : $_SESSION['section4Diet']) . "</td></tr>";
+
+            $body = $body . '</tbody></table><br>';
+          }
+          if($_SESSION['section5Name']){
+            $body = $body . '<h4>Registered Individual Rotarian:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Rotary Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Advisor Type:</th> <th>Diet:</th> </tr> </thead> <tbody>';
+            $body = $body . "<tr><td>" .  $_SESSION['section5Name'] . "</td>".
+            "<td>" . $_SESSION['section5ClubName'] . "</td>".
+            "<td>" . $_SESSION['section5Email'] . "</td>".
+            "<td>" . $_SESSION['section5Phone'] . "</td>".
+            "<td>" . ($_SESSION['section5OtherGender'] ? $_SESSION['section5OtherGender'] : $_SESSION['section5Gender']) . "</td>".
+            "<td>" . $_SESSION['section5AdvisorType'] . "</td>".
+            "<td>" . ($_SESSION['section5OtherDiet'] ? $_SESSION['section5OtherDiet'] : $_SESSION['section5Diet']) . "</td></tr>";
+
+            $body = $body . '</tbody></table><br>';
+          }
+          if($_SESSION['section6GroupName']){
+            $body = $body . '<h4>Registered Group Information:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Group Name:</th> <th>Primary Contact Name:</th> <th>Primary Contact Email:</th> <th>Primary Contact Phone Number:</th> </tr> </thead> <tbody>';
+            $body = $body . "<tr><td>" .  $_SESSION['section6GroupName'] . "</td>".
+            "<td>" . $_SESSION['section6ContactName'] . "</td>".
+            "<td>" . $_SESSION['section6ContactEmail'] . "</td>".
+            "<td>" . $_SESSION['section6ContactPhone'] . "</td></tr>";
+
+            $body = $body . '</tbody></table><br>';
+          }
+          if($_SESSION['section7Names']){
+            $body = $body . '<h4>Registered Faculty/Rotarian Advisors:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Advisor Type:</th> <th>Gender:</th> <th>Club Name:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
+            for($i=0; $i<count($_SESSION['section7Names']); $i++){
+              $body = $body . "<tr><td>" .  $_SESSION['section7Names'][$i] . "</td>".
+              "<td>" . $_SESSION['section7AdvisorTypes'][$i] . "</td>".
+              "<td>" . ($_SESSION['section7OtherGenders'][$i] ? $_SESSION['section7OtherGenders'][$i] : $_SESSION['section7Genders'][$i]) . "</td>".
+              "<td>" . $_SESSION['section7ClubNames'][$i] . "</td>".
+              "<td>" . $_SESSION['section7Emails'][$i] . "</td>".
+              "<td>" . $_SESSION['section7Phones'][$i] . "</td>".
+              "<td>" . ($_SESSION['section7OtherDiets'][$i] ? $_SESSION['section7OtherDiets'][$i] : $_SESSION['section7Diets'][$i]) . "</td></tr>";
+            }
+            $body = $body . '</tbody></table><br>';
+          }
+          if($_SESSION['section8Names']){
+            $body = $body . '<h4>Registered Students:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Grade:</th> <th>Gender:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
+            for($i=0; $i<count($_SESSION['section8Names']); $i++){
+              $body = $body . "<tr><td>" .  $_SESSION['section8Names'][$i] . "</td>".
+              "<td>" . $_SESSION['section8Grades'][$i] . "</td>".
+              "<td>" . ($_SESSION['section8OtherGenders'][$i] ? $_SESSION['section8OtherGenders'][$i] : $_SESSION['section8Genders'][$i]) . "</td>".
+              "<td>" . $_SESSION['section8Emails'][$i] . "</td>".
+              "<td>" . $_SESSION['section8Phones'][$i] . "</td>".
+              "<td>" . ($_SESSION['section8OtherDiets'][$i] ? $_SESSION['section8OtherDiets'][$i] : $_SESSION['section8Diets'][$i]) . "</td></tr>";
+            }
+            $body = $body . '</tbody></table><br>';
+          }
+          if($_SESSION['section9Names']){
+            $body = $body . '<h4>Registered Rotaractors:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Age:</th> <th>Gender:</th> <th>Club Name:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
+            for($i=0; $i<count($_SESSION['section9Names']); $i++){
+              $body = $body . "<tr><td>" .  $_SESSION['section9Names'][$i] . "</td>".
+              "<td>" . $_SESSION['section9Ages'][$i] . "</td>".
+              "<td>" . ($_SESSION['section9OtherGenders'][$i] ? $_SESSION['section9OtherGenders'][$i] : $_SESSION['section9Genders'][$i]) . "</td>".
+              "<td>" . $_SESSION['section9ClubNames'][$i] . "</td>".
+              "<td>" . $_SESSION['section9Emails'][$i] . "</td>".
+              "<td>" . $_SESSION['section9Phones'][$i] . "</td>".
+              "<td>" . ($_SESSION['section9OtherDiets'][$i] ? $_SESSION['section9OtherDiets'][$i] : $_SESSION['section9Diets'][$i]) . "</td></tr>";
+            }
+            $body = $body . '</tbody></table><br></body></html>';
+          }
+          $mail->Body    = $body;
+
+          // CC
+          if($_SESSION['section3Email']){
+            $mail->addCC($_SESSION['section3Email']);
+          }
+          else if($_SESSION['section4Email']){
+            $mail->addCC($_SESSION['section4Email']);
+          }
+          else if($_SESSION['section5Email']){
+            $mail->addCC($_SESSION['section5Email']);
+          }
+          else{
+            $mail->addCC($_SESSION['section6ContactEmail']);
+          }
+
+          //Send attempt
+          if($mail->send()){
+            echo "<script>document.getElementById('confirmStatus').innerHTML = \"<div class='alert alert-success'><strong>Success!</strong> Confirmation email sent!</div>\";</script>";
+          }
+          else{
+            echo "<script>document.getElementById('confirmStatus').innerHTML = \"<div class='alert alert-danger'><strong>Warning!</strong> Confirmation email failed to send. Please try again or contact IDC.</div>\";</script>";
+          }
+        } catch (Exception $e) {
+          echo "<script>document.getElementById('confirmStatus').innerHTML = \"<div class='alert alert-danger'><strong>Warning!</strong> Confirmation email failed to send. Please try again or contact IDC. Mailer Error: " . $mail->ErrorInfo . "</div>\";</script>";
         }
-        else
-        {
-          echo "<script>document.getElementById('confirmStatus').innerHTML = \"<div class='alert alert-danger'><strong>Warning!</strong> Confirmation email failed to send. Please try again or contact IDC.</div>\";</script>";
-        }
+
+        //Clear session
         $_SESSION = array();
         ?>
         <script>
