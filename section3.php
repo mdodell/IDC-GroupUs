@@ -24,6 +24,12 @@ if(isset($_POST['submit'])){
 
 <head>
 
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Interactor Individidual Registration</title>
 
 <!-- CSS assets -->
@@ -41,6 +47,8 @@ if(isset($_POST['submit'])){
 <![endif]-->
 
 <!-- JS assets -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
 
@@ -167,10 +175,6 @@ if(isset($_POST['submit'])){
 </div>
 
 
-
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Include all compiled plugins (below), or include individual files as needed -->
 
