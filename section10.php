@@ -37,8 +37,6 @@ session_start();
 
   <script src="//use.fonticons.com/981576d2.js"></script>
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
   <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
 
   <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
