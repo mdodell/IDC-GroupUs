@@ -80,14 +80,14 @@ if(isset($_POST['submit'])){
       <div id="center">
 
         <h2>Group Registration - Advisor Information</h2>
-        <h4>Please enter all of the information below</h4>
+        <h4>Please enter all of the information below.</h4>
 
         <form name="Contact" method="POST">
 
           <div id="htmlField">
 
             <div class="input-group input-group-lg">
-              <span class="input-group-addon" id="sizing-addon1">How many advisors are you registering?</span>
+              <p>How many advisors are you registering?</p>
               <input type="number" id="advisorAmount" name="advisorAmount" class="form-control" placeholder="I.e. 3, 5, 13, etc." aria-describedby="sizing-addon1" required>
             </div>
 

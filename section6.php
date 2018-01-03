@@ -107,22 +107,24 @@ if(isset($_POST['submit'])){
 
           <br>
 
+          <p>Primary Contact Information:</p>
+
           <div class="input-group input-group-lg">
-            <span class="input-group-addon" id="sizing-addon1">Primary Contact Name</span>
+            <span class="input-group-addon" id="sizing-addon1">Name</span>
             <input type="text" name="primaryContactName" class="form-control" placeholder="I.e. Jim Smith, Jane Doe" aria-describedby="sizing-addon1" required>
           </div>
 
           <br>
 
           <div class="input-group input-group-lg">
-            <span class="input-group-addon" id="sizing-addon1">Primary Contact Email Address</span>
+            <span class="input-group-addon" id="sizing-addon1">Email Address</span>
             <input type="email" name="primaryContactEmail" class="form-control" placeholder="In proper user@example.com format" aria-describedby="sizing-addon1" required>
           </div>
 
           <br>
 
           <div class="input-group input-group-lg">
-            <span class="input-group-addon" id="sizing-addon1">Primary Contact Phone Number</span>
+            <span class="input-group-addon" id="sizing-addon1">Phone Number</span>
             <input type="tel" name="primaryContactPhone" class="form-control" placeholder="In proper 123-456-7890 format" aria-describedby="sizing-addon1" required>
           </div>
 
