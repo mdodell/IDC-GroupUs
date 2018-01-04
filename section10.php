@@ -1,5 +1,35 @@
 <?php
 session_start();
+$_SESSION['count'] = 0;
+if($_SESSION['section3Name']){
+  $_SESSION['count']++;
+}
+if($_SESSION['section4Name']){
+  $_SESSION['count']++;
+}
+if($_SESSION['section5Name']){
+  $_SESSION['count']++;
+}
+if($_SESSION['section7Names']){
+  for($i=0; $i<count($_SESSION['section7Names']); $i++){
+    $_SESSION['count']++;
+  }
+}
+if($_SESSION['section8Names']){
+  for($i=0; $i<count($_SESSION['section8Names']); $i++){
+    $_SESSION['count']++;
+  }
+}
+if($_SESSION['section9Names']){
+  for($i=0; $i<count($_SESSION['section9Names']); $i++){
+    $_SESSION['count']++;
+  }
+}
+include 'totalAmount.php';
+$count = $totalCount + $_SESSION['count'];
+$var_str = var_export($count, true);
+$var = "<?php\n\n\$totalCount = $var_str;\n\n?>";
+file_put_contents('totalAmount.php', $var);
 ?>
 <!DOCTYPE html>
 
@@ -13,7 +43,7 @@ session_start();
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Thank You</title>
+  <title>Thank You!</title>
 
   <!-- CSS assets -->
 
@@ -99,11 +129,13 @@ session_start();
 
         <h2>Interact District Conference 2018 Registration - Thank You!</h2>
 
-        <h4>Thank you for completing registration! Please make sure of your submission status below.</h4>
-
-        <br>
-
         <div id="confirmStatus"></div>
+
+        <?php
+
+        echo '<h4>Thank you for registering for the 2018 Interact District Conference. The conference will be held at Perry High School (1919 E Queen Creek Rd, Gilbert, AZ 85297) on Saturday, February 24th, 2018. <br><br> Please review all of the information in your registration below. If any of the information is incorrect, please contact Kathy Rossetti (kathy.rossetti@cox.net). <br><br> You have <strong>' . $_SESSION['count'] . ' ' . ($_SESSION['count'] == 1 ? 'person' : 'people') . ' registered.</strong> Your registration totals to <strong>$' . ($_SESSION['count'] * 20) . '.</strong> Checks should be made payable to Interact District 5495. Please sent a check to Kathy Rossetti, Interact Registrar, 21405 W. Brittle Bush Lane, Buckeye, AZ 85396. </h4>';
+
+        ?>
 
         <br>
 
@@ -469,7 +501,7 @@ session_start();
           $mail->Subject = $subject;
 
           // Message
-          $body = '<html> <body> <h2>Interact District Conference 2018 Registration Confirmation</h2> <br>';
+          $body = '<html> <body> <h2>Interact District Conference 2018 Registration Confirmation</h2> <h4>Thank you for registering for the 2018 Interact District Conference. The conference will be held at Perry High School (1919 E Queen Creek Rd, Gilbert, AZ 85297) on Saturday, February 24th, 2018. <br><br> Please review all of the information in your registration below. If any of the information is incorrect, please contact Kathy Rossetti (kathy.rossetti@cox.net). <br><br> You have <strong>' . $_SESSION['count'] . ' ' . ($_SESSION['count'] == 1 ? 'person' : 'people') . ' registered.</strong> Your registration totals to <strong>$' . ($_SESSION['count'] * 20) . '.</strong> Checks should be made payable to Interact District 5495. Please sent a check to Kathy Rossetti, Interact Registrar, 21405 W. Brittle Bush Lane, Buckeye, AZ 85396. </h4> <br>';
 
           if($_SESSION['section3Name']){
             $body = $body . '<h4>Registered Individual Interactor:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Interact Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Grade:</th> <th>Diet:</th> </tr> </thead> <tbody>';
@@ -575,10 +607,10 @@ session_start();
             echo "<script>document.getElementById('confirmStatus').innerHTML = \"<div class='alert alert-success'><strong>Success!</strong> Confirmation email sent!</div>\";</script>";
           }
           else{
-            echo "<script>document.getElementById('confirmStatus').innerHTML = \"<div class='alert alert-danger'><strong>Warning!</strong> Confirmation email failed to send. Please try again or contact IDC.</div>\";</script>";
+            echo "<script>document.getElementById('confirmStatus').innerHTML = \"<div class='alert alert-danger'><strong>Warning!</strong> Confirmation email failed to send. Please try again or contact Kathy Rossetti (kathy.rossetti@cox.net).</div>\";</script>";
           }
         } catch (Exception $e) {
-          echo "<script>document.getElementById('confirmStatus').innerHTML = \"<div class='alert alert-danger'><strong>Warning!</strong> Confirmation email failed to send. Please try again or contact IDC. Mailer Error: " . $mail->ErrorInfo . "</div>\";</script>";
+          echo "<script>document.getElementById('confirmStatus').innerHTML = \"<div class='alert alert-danger'><strong>Warning!</strong> Confirmation email failed to send. Please try again or contact Kathy Rossetti (kathy.rossetti@cox.net). Mailer Error: " . $mail->ErrorInfo . "</div>\";</script>";
         }
 
         //Clear session

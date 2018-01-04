@@ -1,0 +1,5 @@
+<?php
+
+$totalCount = 0;
+
+?>
