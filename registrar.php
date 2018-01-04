@@ -1,7 +1,3 @@
-<?php
-session_start();
-$_SESSION = array();
-?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -14,7 +10,7 @@ $_SESSION = array();
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>IDC Registration</title>
+  <title>Registrar's Page</title>
 
   <!-- CSS assets -->
 
@@ -72,6 +68,16 @@ $_SESSION = array();
 
       </div>
 
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav">
+
+          <li><a href="section1.php#"><i class="fas fa-arrow-alt-circle-left"></i>&nbsp;&nbsp;Home</a></li>
+
+        </ul>
+
+      </div>
+
     </div>
 
   </nav>
@@ -84,14 +90,33 @@ $_SESSION = array();
 
         <h2>Interact District Conference 2018 Registration</h2>
 
-        <h4>Please select if you are a group or an individual:</h4>
-
         <br>
+        <?php
 
-        <p>
-          <button type="button" class="btn btn-primary" onclick="location.href = 'section2.php'"><i class="fas fa-user fa-lg"></i>&nbsp;&nbsp;Individual Registration</button>
-          <button type="button" class="btn btn-primary" onclick="location.href = 'section6.php'"><i class="fas fa-users fa-lg"></i>&nbsp;&nbsp;Group Registration</button>
-        </p>
+        $files = array();
+        foreach (glob("*.xlsx") as $file) {
+          $files[] = $file;
+        }
+        echo '<h4>Individual Registrations:</h4>';
+        for($i=0; $i<count($files); $i++){
+          if(substr( $files[$i], 0, 10 ) === "Individual"){
+            echo '<p><a href="' . $files[$i] . '">' . $files[$i] . '</a></p>';
+          }
+        }
+        echo '<h4>Group Registrations:</h4>';
+        for($i=0; $i<count($files); $i++){
+          if(substr( $files[$i], 0, 5 ) === "Group"){
+            echo '<p><a href="' . $files[$i] . '">' . $files[$i] . '</a></p>';
+          }
+        }
+        include 'totalAmount.php';
+        echo '<h4>Total Number of People Registered:</h4>';
+        echo '<p>' . $totalCount . '</p>';
+
+        echo '<h4>Total $ Amount Owed:</h4>';
+        echo '<p>$' . ($totalCount * 20) . '</p>';
+
+        ?>
 
       </div>
 

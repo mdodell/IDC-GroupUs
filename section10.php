@@ -91,7 +91,7 @@ file_put_contents('totalAmount.php', $var);
 
       <div class="navbar-header">
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 
           <span class="sr-only">Toggle navigation</span>
 
@@ -103,7 +103,7 @@ file_put_contents('totalAmount.php', $var);
 
         </button>
 
-          <a class="navbar-brand" href="#"><span class="icon-GroupUs"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span></span>&nbsp;&nbsp;IDC GroupUs</a>
+        <a class="navbar-brand" href="#"><span class="icon-GroupUs"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span></span>&nbsp;&nbsp;IDC GroupUs</a>
 
       </div>
 
@@ -470,8 +470,14 @@ file_put_contents('totalAmount.php', $var);
 
           //Recipients
           $mail->setFrom('noreply@groupus.events'); //Change out when hosted externally
-          $mail->addAddress('adamfleishaker@gmail.com');
-          $mail->addAddress('mdodell@brandeis.edu');
+          $mail->addAddress('lorallilyn@gmail.com');
+          $mail->addAddress('ryleehanson27@gmail.com');
+          $mail->addAddress('arthts@msn.com');
+          $mail->addAddress('kathy.rossetti@cox.net');
+          $mail->addAddress('idc5495contact@gmail.com');
+          $mail->addCC('adamfleishaker@gmail.com');
+          $mail->addCC('dodellmitchell@gmail.com');
+
 
           //Attachments
           $mail->addAttachment($excelFileName); // Add attachments
@@ -629,6 +635,16 @@ file_put_contents('totalAmount.php', $var);
     </div>
 
   </div>
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <img style="float: right; width: 50%" src="interactLogo.png" itemprop="image" alt="Interact"/>
+
+    </div>
+
+  </footer>
 
   <!-- Include all compiled plugins (below), or include individual files as needed -->
 

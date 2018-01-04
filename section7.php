@@ -80,7 +80,7 @@ if(isset($_POST['submit'])){
 
       <div class="navbar-header">
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 
           <span class="sr-only">Toggle navigation</span>
 
@@ -92,7 +92,7 @@ if(isset($_POST['submit'])){
 
         </button>
 
-          <a class="navbar-brand" href="#"><span class="icon-GroupUs"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span></span>&nbsp;&nbsp;IDC GroupUs</a>
+        <a class="navbar-brand" href="#"><span class="icon-GroupUs"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span></span>&nbsp;&nbsp;IDC GroupUs</a>
 
       </div>
 
@@ -188,6 +188,16 @@ if(isset($_POST['submit'])){
     </div>
 
   </div>
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <img style="float: right; width: 50%" src="interactLogo.png" itemprop="image" alt="Interact"/>
+
+    </div>
+
+  </footer>
 
   <!-- Include all compiled plugins (below), or include individual files as needed -->
 

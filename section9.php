@@ -170,6 +170,16 @@ if(isset($_POST['submit'])){
 
   </div>
 
+  <footer class="footer">
+
+    <div class="container">
+
+      <img style="float: right; width: 50%" src="interactLogo.png" itemprop="image" alt="Interact"/>
+
+    </div>
+
+  </footer>
+
   <!-- Include all compiled plugins (below), or include individual files as needed -->
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
