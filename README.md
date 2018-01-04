@@ -10,3 +10,5 @@ PHP version 5.6 or above required.
 [PHPSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet)
 
 [PHPMailer](https://github.com/PHPMailer/PHPMailer)
+
+[IcoMoon](https://github.com/Keyamoon/IcoMoon-Free)

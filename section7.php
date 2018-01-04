@@ -50,6 +50,8 @@ if(isset($_POST['submit'])){
 
   <!-- CSS assets -->
 
+  <link href="style.css" rel="stylesheet">
+
   <link href="bootstrap.min.css" rel="stylesheet">
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
@@ -72,31 +74,41 @@ if(isset($_POST['submit'])){
 
 <body>
 
-<nav class="navbar navbar-default">
+  <nav class="navbar navbar-default">
 
-  <div class="container-fluid">
+    <div class="container-fluid">
 
-    <div class="navbar-header">
+      <div class="navbar-header">
 
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 
-        <span class="sr-only">Toggle navigation</span>
+          <span class="sr-only">Toggle navigation</span>
 
-        <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
 
-        <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
 
-        <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
 
-      </button>
+        </button>
 
-        <a class="navbar-brand" href="#">IDC GroupUs</a>
+          <a class="navbar-brand" href="#"><span class="icon-GroupUs"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span></span>&nbsp;&nbsp;IDC GroupUs</a>
+
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav">
+
+          <li><a href="section1.php#"><i class="fas fa-arrow-alt-circle-left"></i>&nbsp;&nbsp;Start Over</a></li>
+
+        </ul>
+
+      </div>
 
     </div>
 
-  </div>
-
-</nav>
+  </nav>
 
   <div class="container">
 

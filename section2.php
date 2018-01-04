@@ -14,6 +14,8 @@
 
     <!-- CSS assets -->
 
+    <link href="style.css" rel="stylesheet">
+
     <link href="bootstrap.min.css" rel="stylesheet">
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
@@ -61,7 +63,17 @@
 
       </button>
 
-        <a class="navbar-brand" href="#">IDC GroupUs</a>
+        <a class="navbar-brand" href="#"><span class="icon-GroupUs"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span></span>&nbsp;&nbsp;IDC GroupUs</a>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <ul class="nav navbar-nav">
+
+        <li><a href="section1.php#"><i class="fas fa-arrow-alt-circle-left"></i>&nbsp;&nbsp;Start Over</a></li>
+
+      </ul>
 
     </div>
 

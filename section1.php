@@ -1,3 +1,7 @@
+<?php
+session_start();
+$_SESSION = array();
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -13,6 +17,8 @@
     <title>IDC Registration</title>
 
     <!-- CSS assets -->
+
+    <link href="style.css" rel="stylesheet">
 
     <link href="bootstrap.min.css" rel="stylesheet">
 
@@ -62,7 +68,7 @@
 
       </button>
 
-        <a class="navbar-brand" href="#">IDC GroupUs</a>
+        <a class="navbar-brand" href="#"><span class="icon-GroupUs"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span></span>&nbsp;&nbsp;IDC GroupUs</a>
 
     </div>
 
