@@ -86,37 +86,57 @@
 
     <div class="jumbotron">
 
+      <h2>Interact District Conference 2018 Registration</h2>
+
+      <br>
+
       <div id="center">
 
-        <h2>Interact District Conference 2018 Registration</h2>
+        <div class="input-group input-group-lg">
+          <p>Please enter your password to access the registrar.</p>
+          <input type="password" id="password" name="password" class="form-control" placeholder="Password goes here" aria-describedby="sizing-addon1" required>
+        </div>
 
-        <br>
-        <?php
+        <script>
+        function getInput(input){
+          if(document.getElementById('password').validity.valid && document.getElementById('password').value == "idc5495"){
+            alert("Success!");
+            <?php
+                   $htmlHolder = '';
+                   $files = array();
+                   foreach (glob("*.xlsx") as $file) {
+                     $files[] = $file;
+                   }
+                   $htmlHolder = '<h4>Individual Registrations:</h4>';
+                   for($i=0; $i<count($files); $i++){
+                     if(substr( $files[$i], 0, 10 ) === "Individual"){
+                       $htmlHolder .= '<p><a href="' . $files[$i] . '">' . $files[$i] . '</a></p>';
+                     }
+                   }
+                   $htmlHolder .= '<h4>Group Registrations:</h4>';
+                   for($i=0; $i<count($files); $i++){
+                     if(substr( $files[$i], 0, 5 ) === "Group"){
+                       $htmlHolder .= '<p><a href="' . $files[$i] . '">' . $files[$i] . '</a></p>';
+                     }
+                   }
+                   include 'totalAmount.php';
+                   $htmlHolder .= '<h4>Total Number of People Registered:</h4>';
+                   $htmlHolder .= '<p>' . $totalCount . '</p>';
 
-        $files = array();
-        foreach (glob("*.xlsx") as $file) {
-          $files[] = $file;
-        }
-        echo '<h4>Individual Registrations:</h4>';
-        for($i=0; $i<count($files); $i++){
-          if(substr( $files[$i], 0, 10 ) === "Individual"){
-            echo '<p><a href="' . $files[$i] . '">' . $files[$i] . '</a></p>';
+                   $htmlHolder .= '<h4>Total $ Amount Owed:</h4>';
+                   $htmlHolder .= '<p>$' . ($totalCount * 20) . '</p>';
+
+                   ?>
+            myHtml = '<?php echo $htmlHolder?>';
+            document.getElementById('center').innerHTML = myHtml;
+          }
+          else{
+            alert("Failure!");
           }
         }
-        echo '<h4>Group Registrations:</h4>';
-        for($i=0; $i<count($files); $i++){
-          if(substr( $files[$i], 0, 5 ) === "Group"){
-            echo '<p><a href="' . $files[$i] . '">' . $files[$i] . '</a></p>';
-          }
-        }
-        include 'totalAmount.php';
-        echo '<h4>Total Number of People Registered:</h4>';
-        echo '<p>' . $totalCount . '</p>';
+        </script>
 
-        echo '<h4>Total $ Amount Owed:</h4>';
-        echo '<p>$' . ($totalCount * 20) . '</p>';
-
-        ?>
+        <p><button type="button" class="btn btn-primary" onclick="getInput(document.getElementById('password').value)"><i class="btl bt-plus bt-lg"></i>&nbsp;&nbsp;Submit</button></p>
 
       </div>
 
