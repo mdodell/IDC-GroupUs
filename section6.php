@@ -124,7 +124,7 @@ if(isset($_POST['submit'])){
 
         <h2>Group Registration</h2>
 
-        <h4>NOTE: Primary Contact should also count themselves in their proper registration section (Interactor, Rotaractor, Rotarian) if they plan on attending the Interact District Conference. This page is solely for contact as a whole, and the person noted here will not count as registered unless they are also included within the later sections.</h4>
+        <p><strong>NOTE:</strong> Primary Contact <strong><span style="color: #8A0707">should also count themselves in their proper registration section</span></strong> (Interactor, Rotaractor, Rotarian) if they plan on attending the Interact District Conference. <br><br> This page is solely for contact as a whole, and the person noted here will not count as registered unless they are also included within the later sections.</p>
 
         <script>
         function checkYes(){
