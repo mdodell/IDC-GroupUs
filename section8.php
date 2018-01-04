@@ -186,6 +186,8 @@ if(isset($_POST['submit'])){
 
       <img style="float: right; width: 50%" src="interactLogo.png" itemprop="image" alt="Interact"/>
 
+      <figcaption><i class="fas fa-code"></i>&nbsp;&nbsp; by Mitchell Dodell, Adam Fleishaker, Anthony Fong</figcaption>
+
     </div>
 
   </footer>
