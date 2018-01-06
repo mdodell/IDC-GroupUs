@@ -124,7 +124,7 @@ if(isset($_POST['submit'])){
 
         <h2>Group Registration</h2>
 
-        <p><strong>NOTE:</strong> Primary Contact <strong><span style="color: #8A0707">should also count themselves in their proper registration section</span></strong> (Interactor, Rotaractor, Rotarian) if they plan on attending the Interact District Conference. <br><br> This page is solely for contact as a whole, and the person noted here will not count as registered unless they are also included within the later sections.</p>
+        <p><strong>NOTE:</strong> Primary Contact <strong><span style="color: #8A0707">should also count themselves in their proper registration section</span></strong> (Interactor, Rotaractor, Adult/Advisor) if they plan on attending the Interact District Conference. <br><br> This page is solely for contact as a whole, and the person noted here will not count as registered unless they are also included within the later sections.</p>
 
         <script>
         function checkYes(){
@@ -169,7 +169,7 @@ if(isset($_POST['submit'])){
           <br>
 
           <div class="radio">
-            <p>Are you registering any Faculty or Rotarian Advisors?</p>
+            <p>Are you registering any Adults/Advisors?</p>
             <label><input type="radio" name="advisorRadio" value="Yes" required>Yes</label>
           </div>
           <div class="radio">

@@ -29,7 +29,7 @@ if(isset($_POST['submit'])){
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Rotarian Individual Registration</title>
+  <title>Adult/Advisor Individual Registration</title>
 
   <!-- CSS assets -->
 
@@ -99,7 +99,7 @@ if(isset($_POST['submit'])){
 
       <div id="center">
 
-        <h2>Rotarian Individual Registration</h2>
+        <h2>Adult/Advisor Individual Registration</h2>
 
         <br>
 
@@ -113,7 +113,7 @@ if(isset($_POST['submit'])){
           <br>
 
           <div class="input-group input-group-lg">
-            <span class="input-group-addon" id="sizing-addon1">Rotary Club Name</span>
+            <span class="input-group-addon" id="sizing-addon1">Rotary/Group/School Name</span>
             <input type="text" name="rotaryClubName" class="form-control" placeholder="I.e. Phoenix Squaw Peak Rotary Club, Rotary eClub of the SouthWest USA, etc." aria-describedby="sizing-addon1" required>
           </div>
 
@@ -187,7 +187,7 @@ if(isset($_POST['submit'])){
               <option value="Kosher">Kosher</option>
               <option value="Halal">Halal</option>
               <option value="Gluten-Free">Gluten-Free</option>
-              <option value="Daily-Free">Dairy-Free</option>
+              <option value="Dairy-Free">Dairy-Free</option>
               <option value="None">None</option>
               <option value="Other">Other</option>
             </select>

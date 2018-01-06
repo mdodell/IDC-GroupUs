@@ -193,7 +193,7 @@ if(isset($_POST['submit'])){
               <option value="Kosher">Kosher</option>
               <option value="Halal">Halal</option>
               <option value="Gluten-Free">Gluten-Free</option>
-              <option value="Daily-Free">Dairy-Free</option>
+              <option value="Dairy-Free">Dairy-Free</option>
               <option value="None">None</option>
               <option value="Other">Other:</option>
             </select>

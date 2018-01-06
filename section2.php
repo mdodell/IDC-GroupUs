@@ -89,14 +89,14 @@
 
         <h2>Individual Registration</h2>
 
-        <h4>Please select if you are a Interactor, Rotaractor, or Rotarian:</h4>
+        <h4>Please select if you are an Interactor, a Rotaractor, or an Adult/Advisor:</h4>
 
         <br>
 
         <p>
           <button type="button" class="btn btn-primary" onclick="location.href = 'section3.php'"><i class="fas fa-user fa-lg"></i>&nbsp;&nbsp;Interactor Registration</button>
           <button type="button" class="btn btn-primary" onclick="location.href = 'section4.php'"><i class="fas fa-user fa-lg"></i>&nbsp;&nbsp;Rotaractor Registration</button>
-          <button type="button" class="btn btn-primary" onclick="location.href = 'section5.php'"><i class="fas fa-user fa-lg"></i>&nbsp;&nbsp;Rotarian Registration</button>
+          <button type="button" class="btn btn-primary" onclick="location.href = 'section5.php'"><i class="fas fa-user fa-lg"></i>&nbsp;&nbsp;Adult/Advisor Registration</button>
         </p>
 
       </div>

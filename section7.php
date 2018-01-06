@@ -46,7 +46,7 @@ if(isset($_POST['submit'])){
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Group Registration - Advisor Information</title>
+  <title>Group Registration - Adult/Advisor Information</title>
 
   <!-- CSS assets -->
 
@@ -116,7 +116,7 @@ if(isset($_POST['submit'])){
 
       <div id="center">
 
-        <h2>Group Registration - Advisor Information</h2>
+        <h2>Group Registration - Adult/Advisor Information</h2>
         <h4>Please enter all of the information below.</h4>
 
         <form name="Contact" method="POST">
@@ -159,9 +159,9 @@ if(isset($_POST['submit'])){
                 for (i = 0; i < amount; i++) {
                   console.log("In loop test");
                   myHtml = myHtml + '<p>Member #'+ parseInt(i+1) + ':</p><br>' + '<div class="input-group input-group-lg"> <span class="input-group-addon" id="sizing-addon1">Name</span> <input type="text" name="name[]" class="form-control" placeholder="Your first/last name" aria-describedby="sizing-addon1" required> </div> <br>' + '<div class="form-group"> <label for="advisortype[]">Advisor Type:</label> <select required class="form-control" name="advisortype[]" id="advisortype[]"> <option value="">Please select an option</option> <option value="Rotarian Advisor">Rotarian Advisor</option> <option value="Faculty Advisor">Faculty Advisor</option> </select> </div> <br>';
-                  myHtml = myHtml + '<div class="form-group"> <label for="gender[]">Gender:</label> <div id="'+i+'"><select required class="form-control" id="gender[]" name="gender[]" onchange="showOtherField(this.options[this.selectedIndex].value, this.parentElement.id)"> <option value="">Please select an option</option> <option value="Male">Male</option> <option value="Female">Female</option> <option value="Prefer not to say">Prefer not to say</option> <option value="Other">Other:</option> </select> </div> </div> <div id="otherField" class="otherField"></div> <br>' + '<div class="input-group input-group-lg"> <span class="input-group-addon" id="sizing-addon1">Rotary Club/School Name</span> <input type="text" name="rotaryClubName[]" class="form-control" placeholder="I.e. Phoenix Squaw Peak Rotary Club, Centennial High School, etc." aria-describedby="sizing-addon1" required> </div> <br> ';
+                  myHtml = myHtml + '<div class="form-group"> <label for="gender[]">Gender:</label> <div id="'+i+'"><select required class="form-control" id="gender[]" name="gender[]" onchange="showOtherField(this.options[this.selectedIndex].value, this.parentElement.id)"> <option value="">Please select an option</option> <option value="Male">Male</option> <option value="Female">Female</option> <option value="Prefer not to say">Prefer not to say</option> <option value="Other">Other:</option> </select> </div> </div> <div id="otherField" class="otherField"></div> <br>' + '<div class="input-group input-group-lg"> <span class="input-group-addon" id="sizing-addon1">Rotary/Group/School Name</span> <input type="text" name="rotaryClubName[]" class="form-control" placeholder="I.e. Phoenix Squaw Peak Rotary Club, Centennial High School, etc." aria-describedby="sizing-addon1" required> </div> <br> ';
                   myHtml = myHtml + '<div class="input-group input-group-lg"> <span class="input-group-addon" id="sizing-addon1">E-mail</span> <input type="email" name="email[]" class="form-control" placeholder="In proper user@example.com format" aria-describedby="sizing-addon1" required> </div><br>' + '<div class="input-group input-group-lg"> <span class="input-group-addon" id="sizing-addon1">Phone Number</span> <input type="tel" name="phone[]" class="form-control" placeholder="In proper 123-456-7890 format" aria-describedby="sizing-addon1" required> </div> <br>';
-                  myHtml = myHtml + '<div class="form-group"> <label for="diet[]">Dietary Restrictions:</label> <div id="'+i+'"><select required class="form-control" id="diet[]" name="diet[]" onchange="showOtherDietField(this.options[this.selectedIndex].value, this.parentElement.id)"> <option value="">Please select an option</option> <option value="Vegetarian">Vegetarian</option> <option value="Vegan">Vegan</option> <option value="Kosher">Kosher</option> <option value="Halal">Halal</option> <option value="Gluten-Free">Gluten-Free</option> <option value="Daily-Free">Dairy-Free</option> <option value="None">None</option> <option value="Other">Other:</option> </select> </div> </div> <div id="otherDietField" class="otherDietField"></div> <br>';
+                  myHtml = myHtml + '<div class="form-group"> <label for="diet[]">Dietary Restrictions:</label> <div id="'+i+'"><select required class="form-control" id="diet[]" name="diet[]" onchange="showOtherDietField(this.options[this.selectedIndex].value, this.parentElement.id)"> <option value="">Please select an option</option> <option value="Vegetarian">Vegetarian</option> <option value="Vegan">Vegan</option> <option value="Kosher">Kosher</option> <option value="Halal">Halal</option> <option value="Gluten-Free">Gluten-Free</option> <option value="Dairy-Free">Dairy-Free</option> <option value="None">None</option> <option value="Other">Other:</option> </select> </div> </div> <div id="otherDietField" class="otherDietField"></div> <br>';
 
                 }
                 myHtml = myHtml + '<p><input class="btn btn-primary btn-lg" type="submit" name="submit" role="button"></p>';

@@ -133,7 +133,7 @@ file_put_contents('totalAmount.php', $var);
 
         <?php
 
-        echo '<h4>Thank you for registering for the 2018 Interact District Conference. The conference will be held at Perry High School (1919 E Queen Creek Rd, Gilbert, AZ 85297) on Saturday, February 24th, 2018. <br><br> Please review all of the information in your registration below. If any of the information is incorrect, please contact Kathy Rossetti (kathy.rossetti@cox.net). <br><br> You have <strong>' . $_SESSION['count'] . ' ' . ($_SESSION['count'] == 1 ? 'person' : 'people') . ' registered.</strong> Your registration totals to <strong>$' . ($_SESSION['count'] * 20) . '.</strong> Checks should be made payable to Interact District 5495. Please sent a check to Kathy Rossetti, Interact Registrar, 21405 W. Brittle Bush Lane, Buckeye, AZ 85396. </h4>';
+        echo '<h4>Thank you for registering for the 2018 Interact District Conference. The conference will be held at Perry High School (1919 E Queen Creek Rd, Gilbert, AZ 85297) on Saturday, February 24th, 2018. <br><br> Please review all of the information in your registration below. If any of the information is incorrect, please contact Kathy Rossetti (kathy.rossetti@cox.net). <br><br> You have <strong>' . $_SESSION['count'] . ' ' . ($_SESSION['count'] == 1 ? 'person' : 'people') . ' registered.</strong> Your registration totals to <strong>$' . ($_SESSION['count'] * 20) . '.</strong> Checks should be made payable to Interact District 5495. Please sent a check to Kathy Rossetti, Interact Registrar, 21405 W. Brittle Bush Lane, Buckeye, AZ 85396.<br><br>By registering, you as an individual or your group is agreeing to pay the registration fee(s). Please do not register without intent to pay. </h4>';
 
         ?>
 
@@ -173,7 +173,7 @@ file_put_contents('totalAmount.php', $var);
 
         <?php
         if($_SESSION['section5Name']){
-          echo '<h4>Registered Individual Rotarian:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Rotary Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Advisor Type:</th> <th>Diet:</th> </tr> </thead> <tbody>';
+          echo '<h4>Registered Individual Adult/Advisor:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Rotary Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Advisor Type:</th> <th>Diet:</th> </tr> </thead> <tbody>';
           echo "<tr><td>" .  $_SESSION['section5Name'] . "</td>".
           "<td>" . $_SESSION['section5ClubName'] . "</td>".
           "<td>" . $_SESSION['section5Email'] . "</td>".
@@ -188,7 +188,7 @@ file_put_contents('totalAmount.php', $var);
         <!-- Section 6 -->
         <?php
         if($_SESSION['section6GroupName']){
-          echo '<h4>Registered Group Information:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Group Name:</th> <th>Primary Contact Name:</th> <th>Primary Contact Email:</th> <th>Primary Contact Phone Number:</th> </tr> </thead> <tbody>';
+          echo '<h4>Group Contact Information:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Group Name:</th> <th>Primary Contact Name:</th> <th>Primary Contact Email:</th> <th>Primary Contact Phone Number:</th> </tr> </thead> <tbody>';
           echo "<tr><td>" .  $_SESSION['section6GroupName'] . "</td>".
           "<td>" . $_SESSION['section6ContactName'] . "</td>".
           "<td>" . $_SESSION['section6ContactEmail'] . "</td>".
@@ -200,7 +200,7 @@ file_put_contents('totalAmount.php', $var);
         <!-- Section 7 -->
         <?php
         if($_SESSION['section7Names']){
-          echo '<h4>Registered Faculty/Rotarian Advisors:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Advisor Type:</th> <th>Gender:</th> <th>Club Name:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
+          echo '<h4>Registered Adults/Advisors:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Advisor Type:</th> <th>Gender:</th> <th>Club Name:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
           for($i=0; $i<count($_SESSION['section7Names']); $i++){
             echo "<tr><td>" .  $_SESSION['section7Names'][$i] . "</td>".
             "<td>" . $_SESSION['section7AdvisorTypes'][$i] . "</td>".
@@ -258,6 +258,9 @@ file_put_contents('totalAmount.php', $var);
         //Data input
         $excelData = '';
         if($_SESSION['section3Name']){
+          $sheet->setCellValue('A' . $rowNum, 'Individual Interactor Registration:');
+          $sheet->getStyle('A' . $rowNum)->getFont()->setItalic(true);
+          $rowNum++;
           $sheet->setCellValue('A' . $rowNum, 'Name:');
           $sheet->setCellValue('B' . $rowNum, 'Interact Club Name:');
           $sheet->setCellValue('C' . $rowNum, 'Email:');
@@ -284,6 +287,9 @@ file_put_contents('totalAmount.php', $var);
           $rowNum++; //Extra row for space
         }
         if($_SESSION['section4Name']){
+          $sheet->setCellValue('A' . $rowNum, 'Individual Rotaractor Registration:');
+          $sheet->getStyle('A' . $rowNum)->getFont()->setItalic(true);
+          $rowNum++;
           $sheet->setCellValue('A' . $rowNum, 'Name:');
           $sheet->setCellValue('B' . $rowNum, 'Rotaract Name:');
           $sheet->setCellValue('C' . $rowNum, 'Email:');
@@ -310,6 +316,9 @@ file_put_contents('totalAmount.php', $var);
           $rowNum++; //Extra row for space
         }
         if($_SESSION['section5Name']){
+          $sheet->setCellValue('A' . $rowNum, 'Individual Adult/Advisor Registration:');
+          $sheet->getStyle('A' . $rowNum)->getFont()->setItalic(true);
+          $rowNum++;
           $sheet->setCellValue('A' . $rowNum, 'Name:');
           $sheet->setCellValue('B' . $rowNum, 'Rotary Club Name:');
           $sheet->setCellValue('C' . $rowNum, 'Email:');
@@ -336,6 +345,9 @@ file_put_contents('totalAmount.php', $var);
           $rowNum++; //Extra row for space
         }
         if($_SESSION['section6GroupName']){
+          $sheet->setCellValue('A' . $rowNum, 'Group Contact Information');
+          $sheet->getStyle('A' . $rowNum)->getFont()->setItalic(true);
+          $rowNum++;
           $sheet->setCellValue('A' . $rowNum, 'Group Name:');
           $sheet->setCellValue('B' . $rowNum, 'Primary Contact Name:');
           $sheet->setCellValue('C' . $rowNum, 'Primary Contact Email:');
@@ -353,6 +365,9 @@ file_put_contents('totalAmount.php', $var);
           $rowNum++; //Extra row for space
         }
         if($_SESSION['section7Names']){
+          $sheet->setCellValue('A' . $rowNum, 'Adults/Advisors Registration:');
+          $sheet->getStyle('A' . $rowNum)->getFont()->setItalic(true);
+          $rowNum++;
           $sheet->setCellValue('A' . $rowNum, 'Name:');
           $sheet->setCellValue('B' . $rowNum, 'Advsior Type:');
           $sheet->setCellValue('C' . $rowNum, 'Gender:');
@@ -381,6 +396,9 @@ file_put_contents('totalAmount.php', $var);
           $rowNum++; //Extra row for space
         }
         if($_SESSION['section8Names']){
+          $sheet->setCellValue('A' . $rowNum, 'Interactors Registration:');
+          $sheet->getStyle('A' . $rowNum)->getFont()->setItalic(true);
+          $rowNum++;
           $sheet->setCellValue('A' . $rowNum, 'Name:');
           $sheet->setCellValue('B' . $rowNum, 'Grade:');
           $sheet->setCellValue('C' . $rowNum, 'Gender:');
@@ -406,6 +424,9 @@ file_put_contents('totalAmount.php', $var);
           $rowNum++; //Extra row for space
         }
         if($_SESSION['section9Names']){
+          $sheet->setCellValue('A' . $rowNum, 'Rotaractors Registration:');
+          $sheet->getStyle('A' . $rowNum)->getFont()->setItalic(true);
+          $rowNum++;
           $sheet->setCellValue('A' . $rowNum, 'Name:');
           $sheet->setCellValue('B' . $rowNum, 'Age:');
           $sheet->setCellValue('C' . $rowNum, 'Gender:');
@@ -507,7 +528,7 @@ file_put_contents('totalAmount.php', $var);
           $mail->Subject = $subject;
 
           // Message
-          $body = '<html> <body> <h2>Interact District Conference 2018 Registration Confirmation</h2> <h4>Thank you for registering for the 2018 Interact District Conference. The conference will be held at Perry High School (1919 E Queen Creek Rd, Gilbert, AZ 85297) on Saturday, February 24th, 2018. <br><br> Please review all of the information in your registration below. If any of the information is incorrect, please contact Kathy Rossetti (kathy.rossetti@cox.net). <br><br> You have <strong>' . $_SESSION['count'] . ' ' . ($_SESSION['count'] == 1 ? 'person' : 'people') . ' registered.</strong> Your registration totals to <strong>$' . ($_SESSION['count'] * 20) . '.</strong> Checks should be made payable to Interact District 5495. Please sent a check to Kathy Rossetti, Interact Registrar, 21405 W. Brittle Bush Lane, Buckeye, AZ 85396. </h4> <br>';
+          $body = '<html> <body> <h2>Interact District Conference 2018 Registration Confirmation</h2> <h4>Thank you for registering for the 2018 Interact District Conference. The conference will be held at Perry High School (1919 E Queen Creek Rd, Gilbert, AZ 85297) on Saturday, February 24th, 2018. <br><br> Please review all of the information in your registration below. If any of the information is incorrect, please contact Kathy Rossetti (kathy.rossetti@cox.net). <br><br> You have <strong>' . $_SESSION['count'] . ' ' . ($_SESSION['count'] == 1 ? 'person' : 'people') . ' registered.</strong> Your registration totals to <strong>$' . ($_SESSION['count'] * 20) . '.</strong> Checks should be made payable to Interact District 5495. Please sent a check to Kathy Rossetti, Interact Registrar, 21405 W. Brittle Bush Lane, Buckeye, AZ 85396.<br><br>By registering, you as an individual or your group is agreeing to pay the registration fee(s). Please do not register without intent to pay. </h4> <br>';
 
           if($_SESSION['section3Name']){
             $body = $body . '<h4>Registered Individual Interactor:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Interact Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Grade:</th> <th>Diet:</th> </tr> </thead> <tbody>';
@@ -534,7 +555,7 @@ file_put_contents('totalAmount.php', $var);
             $body = $body . '</tbody></table><br>';
           }
           if($_SESSION['section5Name']){
-            $body = $body . '<h4>Registered Individual Rotarian:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Rotary Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Advisor Type:</th> <th>Diet:</th> </tr> </thead> <tbody>';
+            $body = $body . '<h4>Registered Individual Adult/Advisor:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Rotary Club Name:</th> <th>Email:</th> <th>Phone Number:</th> <th>Gender:</th> <th>Advisor Type:</th> <th>Diet:</th> </tr> </thead> <tbody>';
             $body = $body . "<tr><td>" .  $_SESSION['section5Name'] . "</td>".
             "<td>" . $_SESSION['section5ClubName'] . "</td>".
             "<td>" . $_SESSION['section5Email'] . "</td>".
@@ -546,7 +567,7 @@ file_put_contents('totalAmount.php', $var);
             $body = $body . '</tbody></table><br>';
           }
           if($_SESSION['section6GroupName']){
-            $body = $body . '<h4>Registered Group Information:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Group Name:</th> <th>Primary Contact Name:</th> <th>Primary Contact Email:</th> <th>Primary Contact Phone Number:</th> </tr> </thead> <tbody>';
+            $body = $body . '<h4>Group Contact Information:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Group Name:</th> <th>Primary Contact Name:</th> <th>Primary Contact Email:</th> <th>Primary Contact Phone Number:</th> </tr> </thead> <tbody>';
             $body = $body . "<tr><td>" .  $_SESSION['section6GroupName'] . "</td>".
             "<td>" . $_SESSION['section6ContactName'] . "</td>".
             "<td>" . $_SESSION['section6ContactEmail'] . "</td>".
@@ -555,7 +576,7 @@ file_put_contents('totalAmount.php', $var);
             $body = $body . '</tbody></table><br>';
           }
           if($_SESSION['section7Names']){
-            $body = $body . '<h4>Registered Faculty/Rotarian Advisors:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Advisor Type:</th> <th>Gender:</th> <th>Club Name:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
+            $body = $body . '<h4>Registered Adults/Advisors:</h4><div class="table-responsive"> <table class="table"> <thead> <tr> <th>Name:</th> <th>Advisor Type:</th> <th>Gender:</th> <th>Club Name:</th> <th>Email:</th> <th>Phone:</th> <th>Diet:</th></tr> </thead> <tbody>';
             for($i=0; $i<count($_SESSION['section7Names']); $i++){
               $body = $body . "<tr><td>" .  $_SESSION['section7Names'][$i] . "</td>".
               "<td>" . $_SESSION['section7AdvisorTypes'][$i] . "</td>".
