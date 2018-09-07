@@ -82,7 +82,7 @@ $_SESSION = array();
 
       <div id="center">
 
-        <h2>Interact District Conference 2018 Registration</h2>
+        <h2>Fall Leadership Conference 2018 Registration</h2>
 
         <h4>Please select if you are a group or an individual:</h4>
 
